@@ -15,4 +15,5 @@ regexes = [
   '''0xC5d563A36AE78145C45a50134d48A1215220f80a''', # Polymarket Neg-Risk CTF Exchange
   '''0xd91E80cF2E7be2e162c6513ceD06f1dD0dA35296''', # Polymarket Neg-Risk Adapter
   '''0xc907E116054Ad103354f2D350FD2514433D57F6f''', # Chainlink BTC/USD feed on Polygon
+  '''MTA4NzY1NDMyMTA5ODc2NTQzMjE''',                # deliberately fake example token in SECURITY.md
 ]
