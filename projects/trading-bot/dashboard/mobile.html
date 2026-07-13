@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PolyBot Lite</title>
+  <style>
+    :root{
+      --bg:#091018;--card:#101824;--card2:#151f2d;--border:#203045;--text:#d8e1ea;--muted:#8491a3;
+      --green:#00d084;--red:#ff5f6d;--amber:#ffb347;--blue:#53b7ff;--cyan:#2ce6ff;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:radial-gradient(circle at top,#122034 0,#091018 55%,#070b11 100%);color:var(--text);font:14px/1.45 "JetBrains Mono","SFMono-Regular",monospace}
+    .wrap{max-width:760px;margin:0 auto;padding:14px}
+    .head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
+    .title{font-size:20px;font-weight:800;letter-spacing:-0.5px}
+    .sub{font-size:11px;color:var(--muted)}
+    .btn{border:1px solid rgba(83,183,255,.3);background:rgba(83,183,255,.1);color:var(--blue);padding:8px 10px;border-radius:8px;font:inherit}
+    .band{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+    .pill{padding:6px 9px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;border:1px solid transparent}
+    .pill.green{color:var(--green);background:rgba(0,208,132,.12);border-color:rgba(0,208,132,.25)}
+    .pill.red{color:var(--red);background:rgba(255,95,109,.12);border-color:rgba(255,95,109,.24)}
+    .pill.amber{color:var(--amber);background:rgba(255,179,71,.12);border-color:rgba(255,179,71,.24)}
+    .pill.blue{color:var(--blue);background:rgba(83,183,255,.12);border-color:rgba(83,183,255,.24)}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:10px}
+    .card{background:linear-gradient(180deg,rgba(21,31,45,.95),rgba(16,24,36,.95));border:1px solid var(--border);border-radius:14px;padding:12px}
+    .card.full{grid-column:1/-1}
+    .label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px}
+    .value{font-size:25px;font-weight:900;letter-spacing:-1px}
+    .small{font-size:12px;color:var(--muted)}
+    .row{display:flex;justify-content:space-between;gap:10px;margin-top:6px}
+    .row strong{color:var(--text)}
+    .market-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+    .quote{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);border-radius:10px;padding:10px}
+    .quote .side{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px}
+    .quote .price{font-size:28px;font-weight:900;letter-spacing:-1px}
+    .up{color:var(--green)}
+    .dn{color:var(--red)}
+    .event{white-space:pre-wrap;word-break:break-word;font-size:13px}
+    .footer{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:12px;font-size:11px;color:var(--muted)}
+    .desktop-link{color:var(--cyan);text-decoration:none}
+    @media (max-width:560px){.grid{grid-template-columns:1fr}.head{align-items:flex-start;flex-direction:column}.btn{width:100%}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="title">PolyBot Lite</div>
+        <div class="sub" id="stamp">Low-bandwidth view</div>
+      </div>
+      <button class="btn" id="refreshBtn" type="button">Refresh</button>
+    </div>
+
+    <div class="band" id="statusBand">
+      <span class="pill blue">Loading</span>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="label">Bankroll</div>
+        <div class="value" id="bankroll">$0.00</div>
+        <div class="small" id="tradeable">Tradeable $0.00</div>
+      </div>
+      <div class="card">
+        <div class="label">Session P&amp;L</div>
+        <div class="value" id="pnl">$0.00</div>
+        <div class="small" id="record">0W / 0L</div>
+      </div>
+      <div class="card">
+        <div class="label">BTC Spot</div>
+        <div class="value" id="btc">$0.00</div>
+        <div class="small" id="drawdown">Drawdown 0.0%</div>
+      </div>
+      <div class="card">
+        <div class="label">Balances</div>
+        <div class="value" id="pol">0.000 POL</div>
+        <div class="small" id="balances">USDC.e $0.00 · Redeemable $0.00</div>
+      </div>
+      <div class="card full">
+        <div class="label">Gate</div>
+        <div class="value" id="gateTitle" style="font-size:22px">SCANNING</div>
+        <div class="small" id="gateDetail">Watching live markets</div>
+      </div>
+      <div class="card full">
+        <div class="label">Active Market</div>
+        <div class="row">
+          <strong id="marketLabel">BTC 5m</strong>
+          <span id="marketTime">00:00</span>
+        </div>
+        <div class="small" id="marketMeta">No active position</div>
+        <div class="market-grid">
+          <div class="quote">
+            <div class="side">UP</div>
+            <div class="price up" id="upPrice">0.00</div>
+            <div class="small" id="upMeta">bid 0.00 · ask 0.00</div>
+          </div>
+          <div class="quote">
+            <div class="side">DOWN</div>
+            <div class="price dn" id="dnPrice">0.00</div>
+            <div class="small" id="dnMeta">bid 0.00 · ask 0.00</div>
+          </div>
+        </div>
+        <div class="row">
+          <span class="small" id="strike">Strike $0.00</span>
+          <span class="small" id="volume">Vol 0</span>
+        </div>
+      </div>
+      <div class="card full">
+        <div class="label">Engine</div>
+        <div class="row">
+          <strong id="engineSide">NONE</strong>
+          <span id="engineMode">WAIT</span>
+        </div>
+        <div class="row">
+          <span class="small" id="engineConv">Conv 0.000</span>
+          <span class="small" id="engineApproach">Approach --</span>
+        </div>
+        <div class="row">
+          <span class="small" id="engineProb">p 0.500 · q 0.500</span>
+          <span class="small" id="engineEdge">Edge 0.000</span>
+        </div>
+      </div>
+      <div class="card full">
+        <div class="label">Last Event</div>
+        <div class="event" id="lastEvent">Waiting for runner state...</div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>15s refresh · low-bandwidth mode</span>
+      <a class="desktop-link" href="/">Desktop dashboard</a>
+    </div>
+  </div>
+
+  <script>
+    const API = `${location.protocol}//${location.host}/api/status_lite`;
+    let state = null;
+    let fetchedAt = 0;
+
+    function fmtUsd(n){return `$${Number(n||0).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}`;}
+    function fmtPct(n){return `${n>=0?'+':''}${Number(n||0).toFixed(2)}%`;}
+    function fmtSec(n){
+      const s=Math.max(0,Math.floor(Number(n||0)));
+      const m=Math.floor(s/60);
+      return `${String(m).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`;
+    }
+    function toneClass(tone){
+      if(tone==='green')return 'green';
+      if(tone==='red')return 'red';
+      if(tone==='amber')return 'amber';
+      return 'blue';
+    }
+    function elapsedSeconds(){
+      return fetchedAt ? Math.floor((Date.now()-fetchedAt)/1000) : 0;
+    }
+    function liveTimeLeft(){
+      if(!state||!state.market)return 0;
+      return Math.max(0, Number(state.market.timeLeft||0)-elapsedSeconds());
+    }
+    function gateToneStyle(tone){
+      if(tone==='green')return 'var(--green)';
+      if(tone==='red')return 'var(--red)';
+      if(tone==='amber')return 'var(--amber)';
+      return 'var(--blue)';
+    }
+    function render(){
+      if(!state)return;
+      const gate=state.gateStatus||{};
+      const market=state.market||{};
+      const ce=state.convictionEngine||{};
+      const last=state.lastEvent||{};
+
+      document.getElementById('stamp').textContent=`Updated ${new Date(fetchedAt).toLocaleTimeString()} · polling every 15s`;
+      document.getElementById('bankroll').textContent=fmtUsd(state.bankroll);
+      document.getElementById('tradeable').textContent=`Tradeable ${fmtUsd(state.tradeableBalance)}`;
+      document.getElementById('pnl').textContent=fmtUsd(state.pnl);
+      document.getElementById('pnl').style.color=(state.pnl||0)>=0?'var(--green)':'var(--red)';
+      document.getElementById('record').textContent=`${state.wins||0}W / ${state.losses||0}L`;
+      document.getElementById('btc').textContent=fmtUsd(state.btcPrice);
+      document.getElementById('drawdown').textContent=`Drawdown ${Number(state.drawdown||0).toFixed(1)}% · Max bet ${fmtUsd(state.maxBetDollars)}`;
+      document.getElementById('pol').textContent=`${Number((state.balances||{}).pol||0).toFixed(3)} POL`;
+      document.getElementById('balances').textContent=`USDC.e ${fmtUsd((state.balances||{}).usdce)} · Redeemable ${fmtUsd((state.balances||{}).redeemable)}`;
+
+      document.getElementById('gateTitle').textContent=gate.title||'SCANNING';
+      document.getElementById('gateTitle').style.color=gateToneStyle(gate.tone);
+      document.getElementById('gateDetail').textContent=gate.detail||'Watching live markets';
+
+      document.getElementById('marketLabel').textContent=`${market.asset||'BTC'} ${market.interval||'5m'}`;
+      document.getElementById('marketTime').textContent=fmtSec(liveTimeLeft());
+      document.getElementById('marketMeta').textContent=(market.betSide?`${market.betSide} live · ${fmtUsd(market.totalSpent)} deployed`:'No active position') + ` · ${market.status||'active'}`;
+      document.getElementById('upPrice').textContent=Number(market.upPrice||0).toFixed(3);
+      document.getElementById('dnPrice').textContent=Number(market.dnPrice||0).toFixed(3);
+      document.getElementById('upMeta').textContent=`bid ${Number(market.upBid||0).toFixed(3)} · ask ${Number(market.upAsk||0).toFixed(3)}`;
+      document.getElementById('dnMeta').textContent=`bid ${Number(market.dnBid||0).toFixed(3)} · ask ${Number(market.dnAsk||0).toFixed(3)}`;
+      document.getElementById('strike').textContent=`Strike ${fmtUsd(market.btcOpen||0)}`;
+      document.getElementById('volume').textContent=`Vol ${Number(market.volume||0).toLocaleString()}`;
+
+      document.getElementById('engineSide').textContent=ce.side||'NONE';
+      document.getElementById('engineSide').style.color=(ce.side||'')==='UP'?'var(--green)':(ce.side||'')==='DOWN'?'var(--red)':'var(--text)';
+      document.getElementById('engineMode').textContent=ce.mode||'WAIT';
+      document.getElementById('engineConv').textContent=`Conv ${Number(ce.conviction||0).toFixed(3)}`;
+      document.getElementById('engineApproach').textContent=`Approach ${ce.approach||'--'}`;
+      document.getElementById('engineProb').textContent=`p ${Number(ce.p_smooth||0).toFixed(3)} · q ${Number(ce.q_mid||0).toFixed(3)}`;
+      document.getElementById('engineEdge').textContent=`Edge ${Number(ce.edge||0).toFixed(3)}`;
+
+      const eventTime=last&&last.ts?new Date(last.ts*1000).toLocaleTimeString():'--';
+      document.getElementById('lastEvent').textContent=`${eventTime} · ${last&&last.msg?last.msg:'No events yet'}`;
+
+      const pills=[
+        `<span class="pill ${state.dryRun?'amber':'red'}">${state.dryRun?'DRY RUN':'LIVE'}</span>`,
+        `<span class="pill ${toneClass(gate.tone)}">${gate.title||'SCANNING'}</span>`,
+        `<span class="pill ${state.wsBinance?'green':'amber'}">BINANCE ${state.wsBinance?'OK':'DOWN'}</span>`,
+        `<span class="pill ${state.wsPolymarket?'green':'amber'}">POLY ${state.wsPolymarket?'OK':'DOWN'}</span>`
+      ];
+      document.getElementById('statusBand').innerHTML=pills.join('');
+      document.title=`PolyBot Lite · ${gate.title||'SCANNING'} · ${fmtUsd(state.bankroll)}`;
+    }
+
+    async function poll(){
+      const btn=document.getElementById('refreshBtn');
+      btn.disabled=true;
+      try{
+        const r=await fetch(API,{cache:'no-store'});
+        if(!r.ok)throw new Error(`HTTP ${r.status}`);
+        state=await r.json();
+        fetchedAt=Date.now();
+        render();
+      }catch(err){
+        document.getElementById('lastEvent').textContent=`Fetch failed: ${err.message}`;
+      }finally{
+        btn.disabled=false;
+      }
+    }
+
+    document.getElementById('refreshBtn').addEventListener('click', poll);
+    setInterval(render, 1000);
+    setInterval(poll, 15000);
+    poll();
+  </script>
+</body>
+</html>

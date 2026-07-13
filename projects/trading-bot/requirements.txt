@@ -1,2 +1,17 @@
+# Core
+aiohttp>=3.13
+httpx[http2]>=0.28
 python-dotenv>=1.0
 requests>=2.31
+
+# Polymarket / Ethereum
+py-clob-client>=0.34
+web3>=7.0
+eth-account>=0.13
+
+# Analytics
+pandas>=2.0
+numpy>=1.26
+
+# Dev / tests
+pytest>=8.0
