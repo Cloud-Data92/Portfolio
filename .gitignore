@@ -1,0 +1,39 @@
+# ── Secrets: NEVER commit these ─────────────────────────────
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+secrets*.json
+token*.txt
+config.local.*
+*_secret*
+apikeys*
+
+# ── Python ───────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+
+# ── Databases / large generated files ───────────────────────
+*.db
+*.sqlite
+*.sqlite3
+
+# ── OS / editor noise ────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# ── Logs ─────────────────────────────────────────────────────
+*.log
+logs/

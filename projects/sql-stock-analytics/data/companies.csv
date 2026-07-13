@@ -1,0 +1,21 @@
+ticker,company_name,sector
+AAPL,Apple Inc.,Technology
+MSFT,Microsoft Corp.,Technology
+NVDA,NVIDIA Corp.,Technology
+GOOG,Alphabet Inc.,Technology
+AMZN,Amazon.com Inc.,Consumer Discretionary
+TSLA,Tesla Inc.,Consumer Discretionary
+HD,Home Depot Inc.,Consumer Discretionary
+JPM,JPMorgan Chase & Co.,Financials
+BAC,Bank of America Corp.,Financials
+V,Visa Inc.,Financials
+JNJ,Johnson & Johnson,Healthcare
+UNH,UnitedHealth Group,Healthcare
+PFE,Pfizer Inc.,Healthcare
+XOM,Exxon Mobil Corp.,Energy
+CVX,Chevron Corp.,Energy
+PG,Procter & Gamble Co.,Consumer Staples
+KO,Coca-Cola Co.,Consumer Staples
+WMT,Walmart Inc.,Consumer Staples
+BA,Boeing Co.,Industrials
+CAT,Caterpillar Inc.,Industrials

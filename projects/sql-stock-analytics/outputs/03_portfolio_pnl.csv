@@ -1,0 +1,21 @@
+ticker,company_name,sector,shares_held,avg_cost_per_share,latest_close,market_value,unrealized_pnl,unrealized_pnl_pct
+GOOG,Alphabet Inc.,Technology,54,304.5,553.47,29887.38,13444.6,81.8
+CAT,Caterpillar Inc.,Industrials,73,364.89,463.07,33804.11,7167.13,26.9
+JNJ,Johnson & Johnson,Healthcare,37,217.52,292.83,10834.71,2786.34,34.6
+TSLA,Tesla Inc.,Consumer Discretionary,17,260.27,346.36,5888.12,1463.54,33.1
+PG,Procter & Gamble Co.,Consumer Staples,55,167.47,188.18,10349.9,1138.96,12.4
+WMT,Walmart Inc.,Consumer Staples,23,168.99,208.62,4798.26,911.57,23.5
+AAPL,Apple Inc.,Technology,31,177.7,204.43,6337.33,828.65,15.0
+AMZN,Amazon.com Inc.,Consumer Discretionary,5,181.31,343.49,1717.45,810.89,89.4
+MSFT,Microsoft Corp.,Technology,25,315.57,342.53,8563.25,673.91,8.5
+XOM,Exxon Mobil Corp.,Energy,9,150.5,219.4,1974.6,620.08,45.8
+V,Visa Inc.,Financials,46,306.09,319.06,14676.76,596.6,4.2
+KO,Coca-Cola Co.,Consumer Staples,23,59.25,67.41,1550.43,187.65,13.8
+CVX,Chevron Corp.,Energy,24,156.74,161.94,3886.56,124.69,3.3
+BAC,Bank of America Corp.,Financials,5,32.18,52.07,260.35,99.47,61.8
+UNH,UnitedHealth Group,Healthcare,32,583.61,585.08,18722.56,47.16,0.3
+BA,Boeing Co.,Industrials,1,125.06,147.82,147.82,22.76,18.2
+HD,Home Depot Inc.,Consumer Discretionary,1,347.91,356.02,356.02,8.11,2.3
+PFE,Pfizer Inc.,Healthcare,132,16.08,11.3,1491.6,-631.31,-29.7
+JPM,JPMorgan Chase & Co.,Financials,33,119.17,92.91,3066.03,-866.49,-22.0
+NVDA,NVIDIA Corp.,Technology,26,743.73,660.66,17177.16,-2159.72,-11.2
