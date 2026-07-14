@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <rect width="880" height="470" rx="12" fill="#fcfcfb"/>
+  <text x="34" y="44" font-size="17" font-weight="700" fill="#0b0b0b">PolyBot architecture — deterministic core, advisory AI</text>
+
+  <!-- runner loop -->
+  <rect x="34" y="72" width="812" height="86" rx="10" fill="#ffffff" stroke="#2a78d6" stroke-width="1.6"/>
+  <text x="52" y="100" font-size="13.5" font-weight="700" fill="#2a78d6">runner.py — async 24/7 loop</text>
+  <text x="52" y="124" font-size="12" fill="#52514e">discovery&#160;&#160;&#8594;&#160;&#160;order-book pricing&#160;&#160;&#8594;&#160;&#160;signals&#160;&#160;&#8594;&#160;&#160;Kelly sizing&#160;&#160;&#8594;&#160;&#160;execution (dry-run default)&#160;&#160;&#8594;&#160;&#160;settlement</text>
+  <text x="52" y="143" font-size="11" fill="#898781">HTTP/2 pooled clients &#183; parallel CLOB reads &#183; WebSocket BTC + Polymarket feeds</text>
+
+  <!-- four subsystems -->
+  <rect x="34" y="196" width="188" height="104" rx="10" fill="#ffffff" stroke="#e1e0d9" stroke-width="1.4"/>
+  <text x="50" y="222" font-size="12.5" font-weight="700" fill="#0b0b0b">btc15m.py</text>
+  <text x="50" y="241" font-size="11" fill="#52514e">market discovery,</text>
+  <text x="50" y="257" font-size="11" fill="#52514e">slug-exact window math,</text>
+  <text x="50" y="273" font-size="11" fill="#52514e">aggressive caching</text>
+
+  <rect x="242" y="196" width="188" height="104" rx="10" fill="#ffffff" stroke="#e1e0d9" stroke-width="1.4"/>
+  <text x="258" y="222" font-size="12.5" font-weight="700" fill="#0b0b0b">directional.py</text>
+  <text x="258" y="241" font-size="11" fill="#52514e">6-signal engine: momentum</text>
+  <text x="258" y="257" font-size="11" fill="#52514e">&#215;3 timeframes, book imbalance,</text>
+  <text x="258" y="273" font-size="11" fill="#52514e">reprice lag, implied skew</text>
+  <text x="258" y="291" font-size="11" font-weight="600" fill="#1baf7a">Kelly criterion + risk gates</text>
+
+  <rect x="450" y="196" width="188" height="104" rx="10" fill="#ffffff" stroke="#e1e0d9" stroke-width="1.4"/>
+  <text x="466" y="222" font-size="12.5" font-weight="700" fill="#0b0b0b">history.py</text>
+  <text x="466" y="241" font-size="11" fill="#52514e">SQLite: every trade, alert,</text>
+  <text x="466" y="257" font-size="11" fill="#52514e">and price snapshot</text>
+  <text x="466" y="277" font-size="11" font-weight="600" fill="#eda100">&#8594; analyze_thresholds.py</text>
+  <text x="466" y="293" font-size="11" fill="#898781">parameter sweeps over real data</text>
+
+  <rect x="658" y="196" width="188" height="104" rx="10" fill="#ffffff" stroke="#e1e0d9" stroke-width="1.4"/>
+  <text x="674" y="222" font-size="12.5" font-weight="700" fill="#0b0b0b">dashboard/</text>
+  <text x="674" y="241" font-size="11" fill="#52514e">zero-dependency web UI</text>
+  <text x="674" y="257" font-size="11" fill="#52514e">on the runner&#8217;s local API:</text>
+  <text x="674" y="273" font-size="11" fill="#52514e">positions, P&#38;L, signals,</text>
+  <text x="674" y="289" font-size="11" fill="#52514e">risk gates, live log</text>
+
+  <!-- connectors runner -> subsystems -->
+  <g stroke="#c3c2b7" stroke-width="1.4" fill="none">
+    <path d="M128 158 v38"/><path d="M336 158 v38"/><path d="M544 158 v38"/><path d="M752 158 v38"/>
+  </g>
+  <g fill="#c3c2b7">
+    <path d="M128 196 l-4.5,-8 h9 z"/><path d="M336 196 l-4.5,-8 h9 z"/>
+    <path d="M544 196 l-4.5,-8 h9 z"/><path d="M752 196 l-4.5,-8 h9 z"/>
+  </g>
+
+  <!-- advisor sidecar -->
+  <rect x="34" y="340" width="812" height="96" rx="10" fill="#ffffff" stroke="#4a3aa7" stroke-width="1.6" stroke-dasharray="6 4"/>
+  <text x="52" y="368" font-size="13.5" font-weight="700" fill="#4a3aa7">advisor_monitor.py — LLM sidecar (advisory only)</text>
+  <text x="52" y="392" font-size="12" fill="#52514e">polls /api/advisor_context&#160;&#160;&#8594;&#160;&#160;LLM writes schema-validated JSON nudges to a file&#160;&#160;&#8594;&#160;&#160;runner reads opportunistically</text>
+  <text x="52" y="416" font-size="11.5" font-weight="600" fill="#0b0b0b">Hard constraints: no code path to place or cancel orders &#183; strict JSON schema &#183; circuit breaker &#183; bot unchanged if advisor dies</text>
+
+  <!-- connector runner <-> advisor -->
+  <path d="M440 300 v40" stroke="#c3c2b7" stroke-width="1.4" stroke-dasharray="5 4" fill="none"/>
+  <path d="M440 340 l-4.5,-8 h9 z" fill="#c3c2b7"/>
+</svg>

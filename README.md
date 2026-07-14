@@ -15,6 +15,10 @@ Data-focused technologist with a background in Information Systems (BBA, Kennesa
 | [🤖 discord-ai-bot](projects/discord-bots/discord-ai-bot/) | Discord chatbot backed by a fully local LLM (Ollama) — private, zero API cost, per-message model switching | ✅ Migrated & documented |
 | [📉 stock-scanner](projects/discord-bots/stock-scanner/) | Watchlist scanner flagging unusual-volume moves, with a local-LLM analysis hook | ✅ Migrated & documented |
 
+<a href="projects/trading-bot/"><img alt="PolyBot live dashboard running in dry-run mode" src="projects/trading-bot/assets/dashboard.png" width="880"></a>
+
+*PolyBot's real-time dashboard, captured live in dry-run mode — [see the project →](projects/trading-bot/)*
+
 ---
 
 ## 🧠 How I use AI — strategically, not blindly

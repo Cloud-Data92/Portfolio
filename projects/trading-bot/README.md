@@ -9,6 +9,12 @@ trade to SQLite, and serves a real-time dashboard — continuously, unattended.
 Built February–April 2026. Ran 24/7 on an AWS EC2 instance and on my Mac mini home
 server, in dry-run and small-stakes live modes.
 
+![PolyBot live dashboard in dry-run mode: order books, conviction engine, Kelly panel, simulated position](assets/dashboard.png)
+
+*The real dashboard, captured live in **dry-run** mode with no credentials loaded —
+order books, the six-signal conviction engine, Kelly sizing controls, and a
+simulated position, all against real Polymarket market data.*
+
 > **Honest disclosure up front:** directional betting on 5-minute binary markets is
 > gambling-adjacent. The momentum model is a heuristic — I have not proven it has a
 > durable statistical edge, and the code says so in its own docstrings. What this
@@ -18,26 +24,10 @@ server, in dry-run and small-stakes live modes.
 
 ## Architecture
 
-```
-                 ┌──────────────────────────────────────────────┐
-                 │              runner.py (asyncio)             │
-                 │  discovery → pricing → signals → sizing →    │
-                 │  execution → settlement, in a continuous loop │
-                 └──┬──────────┬──────────┬──────────┬──────────┘
-                    │          │          │          │
-        ┌───────────▼──┐  ┌────▼─────┐  ┌─▼────────┐ ┌▼─────────────┐
-        │ btc15m.py    │  │ direction│  │ history  │ │ aiohttp API  │
-        │ market disc. │  │ al.py    │  │ .py      │ │ + dashboard/ │
-        │ HTTP/2 pool  │  │ signals+ │  │ SQLite   │ │ live web UI  │
-        │              │  │ Kelly    │  │ trades   │ │ (port 8420)  │
-        └──────────────┘  └──────────┘  └──────────┘ └──────┬───────┘
-                                                            │
-                              ┌─────────────────────────────▼──┐
-                              │ advisor_monitor.py (sidecar)   │
-                              │ LLM reads state, writes bounded │
-                              │ JSON advice — can never trade   │
-                              └────────────────────────────────┘
-```
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/architecture_dark.svg">
+  <img alt="PolyBot architecture: an async runner loop feeding market discovery, a six-signal engine with Kelly sizing, SQLite history, and a web dashboard, with an advisory-only LLM sidecar" src="assets/architecture_light.svg" width="860">
+</picture>
 
 **Signal engine** ([src/directional.py](src/directional.py)) — six inputs across
 timeframes: micro momentum (30s of BTC ticks), short momentum (2–3 min, primary),
