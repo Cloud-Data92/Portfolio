@@ -18,11 +18,3 @@ ciccomatthew@gmail.com
 
 ---
 
-### ⚙️ How to use this file (delete this section!)
-
-GitHub shows this README on your profile page if you put it in a repo named **exactly** `Cloud-Data92` (same as your username):
-
-1. On github.com click **+** → **New repository**
-2. Name it `Cloud-Data92` — GitHub will show a special message: *"You found a secret! Cloud-Data92/Cloud-Data92 is a special repository..."*
-3. Make it **Public**, check **Add a README file**, create it
-4. Click the pencil ✏️ on the README, paste this file's contents (minus this section), commit
