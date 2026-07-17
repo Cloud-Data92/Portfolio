@@ -37,3 +37,13 @@ Thumbs.db
 # ── Logs ─────────────────────────────────────────────────────
 *.log
 logs/
+
+# ── Node ─────────────────────────────────────────────────────
+node_modules/
+
+# ── Bot state / data / backups ───────────────────────────────
+data/
+.bot_state.json
+*.bak
+.claude/
+.pytest_cache/

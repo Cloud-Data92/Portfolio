@@ -47,6 +47,25 @@ Indexes on `daily_prices(trade_date)` and `trades(ticker, trade_date)` support t
 
 Full results for every query are committed in [`outputs/`](outputs/).
 
+## Visualized results
+
+Rendered directly from the committed `outputs/` CSVs (light/dark aware):
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/sector_returns_dark.png">
+  <img alt="Horizontal bar chart of average total return by sector; Technology leads at 83.1%" src="assets/sector_returns_light.png" width="820">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/golden_cross_dark.png">
+  <img alt="MSFT price with 50-day and 200-day moving averages; golden-cross and death-cross events marked" src="assets/golden_cross_light.png" width="820">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/portfolio_pnl_dark.png">
+  <img alt="Diverging bar chart of unrealized profit and loss per position; gains in blue, losses in red" src="assets/portfolio_pnl_light.png" width="820">
+</picture>
+
 ## Tableau
 
 The files in `outputs/` (plus the raw `data/` CSVs) are designed to drop straight into Tableau:

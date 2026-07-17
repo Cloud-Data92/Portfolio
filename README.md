@@ -12,8 +12,27 @@ Data-focused technologist with a background in Information Systems (BBA, Kennesa
 |---|---|---|
 | [📊 SQL Stock Market Analytics](projects/sql-stock-analytics/) | Advanced SQL: schema design, joins, CTEs, window functions, portfolio P&L analysis, plus a Tableau-ready data pipeline | ✅ Complete & runnable |
 | [🏗️ ETL Pipeline → Star-Schema Warehouse](projects/etl-data-warehouse/) | Production-style ETL: messy-data cleansing, reject quarantine, data-quality gates, Kimball dimensional modeling, idempotent loads, unit tests | ✅ Complete & runnable |
-| [🤖 Discord Bots](projects/discord-bots/) | Python, event-driven programming, API integration, deployment on always-on hardware (Mac mini home server) | 🚧 Code migration in progress |
-| [📈 Automated Trading Bot](projects/trading-bot/) | Python, broker/market-data APIs, strategy logic, risk management, scheduled automation | 🚧 Code migration in progress |
+| [📈 PolyBot — Trading Engine](projects/trading-bot/) | 24/7 async Python engine for Polymarket BTC binary markets: multi-timeframe momentum signals, Kelly-criterion sizing, SQLite trade history, real-time dashboard, and an LLM advisor that can suggest but never execute | ✅ Migrated & documented |
+| [🤖 discord-ai-bot](projects/discord-bots/discord-ai-bot/) | Discord chatbot backed by a fully local LLM (Ollama) — private, zero API cost, per-message model switching | ✅ Migrated & documented |
+| [📉 stock-scanner](projects/discord-bots/stock-scanner/) | Watchlist scanner flagging unusual-volume moves, with a local-LLM analysis hook | ✅ Migrated & documented |
+
+<a href="projects/trading-bot/"><img alt="PolyBot live dashboard running in dry-run mode" src="projects/trading-bot/assets/dashboard.png" width="880"></a>
+
+*PolyBot's real-time dashboard, captured live in dry-run mode — [see the project →](projects/trading-bot/)*
+
+---
+
+## 🧠 How I use AI — strategically, not blindly
+
+- **Bounded advisor, deterministic core.** The trading bot's LLM sidecar reads engine
+  state and writes schema-validated "nudges" to a file the engine may consult — but the
+  LLM *cannot* place or cancel orders, and if it's down the bot is unchanged. AI adds
+  judgment at the margins; auditable code keeps control.
+- **Local models where privacy and cost matter.** The Discord bot and scanner run on
+  Ollama models on my own hardware — no per-token bills, no data leaving the machine.
+- **Agents for repeatable work.** I run scheduled AI agents (launchd on a Mac mini
+  home server) for things like daily job-posting digests delivered over iMessage —
+  automation where the output is checked, not worshipped.
 
 ---
 
