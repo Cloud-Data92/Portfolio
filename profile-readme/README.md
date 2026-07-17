@@ -1,20 +1,18 @@
 # 👋 Hi, I'm Matthew Cicco
 
-**Data & automation enthusiast** — BBA in Information Systems (Kennesaw State University, CS minor) with professional experience in SQL, data warehousing, ETL, and analytics at UPS and UL Environment, plus a home lab of Python bots running 24/7 on a Mac mini.
+**Data & systems analyst** — advanced SQL and BI engineering, data warehousing, and real-time Python systems. Professionally: enterprise delivery analytics at The Home Depot (BigQuery, SQL Server, and Tableau reporting used by 200+ field and leadership users), with earlier analytics roles at UPS and UL Environment. Personally: a home lab of 24/7 systems on a Mac mini. BBA in Information Systems (Kennesaw State, CS minor).
 
-## 🔭 What I'm building
+## 🔭 Highlights
 
-- 📊 **[SQL Stock Market Analytics](https://github.com/Cloud-Data92/Portfolio/tree/main/projects/sql-stock-analytics)** — normalized market database analyzed with window functions, CTEs, and portfolio P&L queries; Tableau-ready outputs
-- 🤖 **Discord bots** — Python bots serving my communities, deployed on always-on home hardware
-- 📈 **Automated trading bot** — scheduled Python strategy engine talking to broker APIs (paper & live)
+- 🚚 **[Enterprise Delivery Analytics](https://github.com/Cloud-Data92/Portfolio/tree/main/projects/enterprise-delivery-analytics)** — 10 sanitized Home Depot case studies: slot utilization, BigQuery GIS serviceability, delivery-attempt modeling, KPI scoring, reconciliation, incremental BI architecture
+- 📈 **[PolyBot](https://github.com/Cloud-Data92/Portfolio/tree/main/projects/trading-bot)** — 24/7 async trading engine with live order books, Kelly sizing, SQLite analytics, a real-time dashboard, and an advisory-only LLM sidecar
+- 📊 **[SQL Stock Market Analytics](https://github.com/Cloud-Data92/Portfolio/tree/main/projects/sql-stock-analytics)** — runnable window-function/CTE showcase with Tableau-ready outputs
+- 🤖 **[Local-AI Discord bots](https://github.com/Cloud-Data92/Portfolio/tree/main/projects/discord-bots)** — self-hosted Ollama-backed chatbot and stock scanner
 
 ## 🛠️ Toolbox
 
-`SQL` `Python` `Tableau` `Excel/VBA` `Data Warehousing` `ETL` `MySQL` `SQLite` `R` `Git/GitHub`
+`SQL (BigQuery, SQL Server, SQLite, MySQL)` `Python` `Tableau` `Geospatial SQL` `Data Warehousing & ETL` `Excel/VBA` `Node.js` `Git/GitHub`
 
 ## 📫 Reach me
 
-ciccomatthew@gmail.com
-
----
-
+ciccomatthew@gmail.com · 🌐 [cloud-data92.github.io/Portfolio](https://cloud-data92.github.io/Portfolio/)

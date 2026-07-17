@@ -111,7 +111,7 @@
 <header>
   <div class="wrap">
     <h1>Matthew Cicco</h1>
-    <p class="tagline">Data &amp; automation — SQL, data warehousing, ETL, Tableau, and Python bots that run 24/7.</p>
+    <p class="tagline">Data &amp; systems analyst — advanced SQL and BI engineering, data warehousing, and real-time Python systems. I turn messy operational data into models, dashboards, and tools people actually use.</p>
     <div class="links">
       <a class="btn primary" href="https://github.com/Cloud-Data92/Portfolio">View my GitHub portfolio</a>
       <a class="btn ghost" href="mailto:ciccomatthew@gmail.com">ciccomatthew@gmail.com</a>
@@ -123,11 +123,14 @@
   <div class="wrap">
     <h2><span class="mark">01.</span> About</h2>
     <p class="lede">
-      I'm an Information Systems graduate (BBA, Kennesaw State University, Computer Science minor)
-      who has spent his career close to data: writing SQL against enterprise warehouses at UPS,
-      running data mining and ETL for toxicology research at UL Environment, and building the
-      reporting layers that turn raw records into decisions. Outside of work I run a small home lab —
-      a Mac mini that hosts my Discord bots and an automated trading bot, around the clock.
+      My work sits at the intersection of three things. <strong>SQL &amp; BI engineering:</strong> at Home Depot
+      I built the analytics layer behind final-mile delivery — route and slot-capacity utilization, geospatial
+      serviceability, KPI heatmaps, and cross-system reconciliation in BigQuery, SQL Server, and Tableau.
+      <strong>Data engineering:</strong> warehouses, ETL pipelines with quality gates, and incremental load
+      architecture that keeps millions of rows fresh. <strong>Systems &amp; automation:</strong> a 24/7 home lab
+      running my async trading engine and local-AI bots. I use SQL not just to calculate metrics but to define
+      data grain, resolve conflicting records, and encode business rules — data products people can trust.
+      Earlier analytics roles at UPS and UL Environment; Information Systems BBA (Kennesaw State, CS minor).
     </p>
   </div>
 </section>
@@ -139,27 +142,27 @@
       <div class="skill-card">
         <h3>SQL &amp; Databases</h3>
         <div class="tags">
+          <span class="tag">BigQuery</span><span class="tag">SQL Server</span>
           <span class="tag">Window functions</span><span class="tag">CTEs</span>
-          <span class="tag">MySQL</span><span class="tag">SQLite</span>
-          <span class="tag">MS Access</span><span class="tag">Schema design</span>
+          <span class="tag">Geospatial SQL</span><span class="tag">SQLite / MySQL</span>
         </div>
-        <p>Complex analytical queries — joins, aggregates, ranking, moving averages — plus normalized and dimensional (star-schema) modeling.</p>
+        <p>Enterprise-scale analytical SQL: pivots, temporal state logic, geospatial serviceability (ST_DISTANCE / ST_DWITHIN), defensive math, and explicit grain control.</p>
       </div>
       <div class="skill-card">
-        <h3>Data Warehousing &amp; ETL</h3>
+        <h3>Data Engineering &amp; ETL</h3>
         <div class="tags">
-          <span class="tag">ETL pipelines</span><span class="tag">Data quality</span>
-          <span class="tag">Kimball modeling</span><span class="tag">Data mining</span>
+          <span class="tag">Incremental MERGE</span><span class="tag">Partitioning</span>
+          <span class="tag">Data quality</span><span class="tag">Kimball modeling</span>
         </div>
-        <p>Professional experience extracting, validating, and normalizing enterprise data; reject-handling and idempotent load patterns.</p>
+        <p>Idempotent incremental loads with late-data lookbacks, reject quarantine, reconciliation layers, and scheduled-query/dependency management in BigQuery.</p>
       </div>
       <div class="skill-card">
         <h3>Analytics &amp; Visualization</h3>
         <div class="tags">
-          <span class="tag">Tableau</span><span class="tag">Excel / Power Pivot</span>
-          <span class="tag">VBA</span><span class="tag">Executive reporting</span>
+          <span class="tag">Tableau</span><span class="tag">KPI heatmaps</span>
+          <span class="tag">Excel / Power Pivot</span><span class="tag">Executive reporting</span>
         </div>
-        <p>Heat-maps and monthly status reporting for sales directors at UPS; Tableau-ready outputs in every portfolio project.</p>
+        <p>Market KPI heatmaps and scorecards for Home Depot routing and capacity decisions; separated KPI vs. detail extracts with independent refresh schedules.</p>
       </div>
       <div class="skill-card">
         <h3>Python &amp; Automation</h3>
@@ -177,6 +180,18 @@
 <section id="projects">
   <div class="wrap">
     <h2><span class="mark">03.</span> Projects</h2>
+
+    <div class="project">
+      <h3>🚚 Enterprise Delivery Analytics — Last-Mile Logistics Case Studies <span class="status done">PUBLISHED</span></h3>
+      <p class="meta">BigQuery · SQL Server · Tableau · Geospatial SQL · Data quality</p>
+      <p>Ten sanitized case studies from my enterprise work at Home Depot: route-hours and slot-capacity utilization, geospatial store serviceability, customer-order delivery-attempt modeling, current alert state, weighted market KPI scoring, cross-system reconciliation, and incremental BigQuery→Tableau architecture. Built a logistics report used by 200+ field and leadership users; owned pallet-calculation logic feeding downstream planning systems.</p>
+      <ul>
+        <li>BigQuery GIS serviceability ranking (<code>ST_GEOGPOINT</code>, <code>ST_DWITHIN</code>, deterministic top-N)</li>
+        <li>Grain-controlled rollups, safe math (<code>SAFE_DIVIDE</code>, <code>NULLIF</code>), and exception taxonomies designed for action</li>
+        <li>Idempotent incremental <code>MERGE</code> loads with late-data lookbacks, partitioning, and split KPI/detail Tableau extracts</li>
+      </ul>
+      <a href="https://github.com/Cloud-Data92/Portfolio/tree/main/projects/enterprise-delivery-analytics">Read the case studies →</a>
+    </div>
 
     <div class="project">
       <h3>📊 SQL Stock Market Analytics <span class="status done">COMPLETE</span></h3>
@@ -203,17 +218,17 @@
     </div>
 
     <div class="project">
-      <h3>🤖 Discord Bots <span class="status wip">MIGRATING</span></h3>
-      <p class="meta">Python · discord.py · APIs · 24/7 deployment</p>
-      <p>Bots I built and run continuously on my Mac mini home server via launchd. Code is being migrated into the public portfolio behind a strict no-secrets process (env-var configuration, Gitleaks scanning, push protection).</p>
-      <a href="https://github.com/Cloud-Data92/Portfolio/tree/main/projects/discord-bots">Project home →</a>
+      <h3>📈 PolyBot — Real-Time Trading Engine <span class="status done">MIGRATED</span></h3>
+      <p class="meta">Async Python · Live order books · Kelly sizing · SQLite · Real-time dashboard</p>
+      <p>A 24/7 async engine for Polymarket's BTC 5/15-minute binary markets: live order-book ingestion, a six-signal momentum model, Kelly-criterion position sizing, session stop-loss and cool-down risk gates, SQLite trade history with threshold-sweep analytics, and a zero-dependency web dashboard. An LLM advisor sidecar can <em>suggest</em> — it has no code path to trade. Dry-run by default; honest about its edge.</p>
+      <a href="https://github.com/Cloud-Data92/Portfolio/tree/main/projects/trading-bot">View the engine →</a>
     </div>
 
     <div class="project">
-      <h3>📈 Automated Trading Bot <span class="status wip">MIGRATING</span></h3>
-      <p class="meta">Python · Broker APIs · Scheduled automation · Risk controls</p>
-      <p>A scheduled strategy engine that pulls market data, evaluates signals (the same moving-average logic my SQL project expresses as queries), and manages orders through a broker API — paper-trading by default, with keys isolated in environment variables.</p>
-      <a href="https://github.com/Cloud-Data92/Portfolio/tree/main/projects/trading-bot">Project home →</a>
+      <h3>🤖 Local-AI Discord Bots <span class="status done">MIGRATED</span></h3>
+      <p class="meta">Python · Node.js · Ollama (local LLMs) · 24/7 on a Mac mini</p>
+      <p>Two self-hosted bots running continuously via launchd: a Discord chatbot backed by a fully local LLM (private, zero API cost, per-message model switching) and a stock watchlist scanner that flags unusual-volume moves and pipes findings through a local model for analysis.</p>
+      <a href="https://github.com/Cloud-Data92/Portfolio/tree/main/projects/discord-bots">View the bots →</a>
     </div>
   </div>
 </section>
@@ -222,7 +237,12 @@
   <div class="wrap">
     <h2><span class="mark">04.</span> Experience</h2>
     <ul class="timeline">
-      <!-- TODO(Matt): add your 2019–present roles here, most recent first -->
+      <!-- TODO(Matt): confirm exact Home Depot title and start/end dates -->
+      <li>
+        <span class="when">Most recent</span>
+        <h3>Delivery Operations Data &amp; Systems · The Home Depot</h3>
+        <p>Analytics and systems layer for final-mile delivery: SQL/Tableau KPI reporting and heatmaps for routing and capacity, pallet-calculation ownership, geospatial serviceability analysis, cross-system data reconciliation, and delivery-system integration support — including an always-on operations transition, flatbed delivery center enablement, and a slot-based capacity-engine pilot. Built a logistics report used by 200+ internal users.</p>
+      </li>
       <li>
         <span class="when">2018 — 2019</span>
         <h3>Administrative Assistant · New Reach Inc</h3>

@@ -1,8 +1,22 @@
 # Matthew Cicco — Project Portfolio
 
-Data-focused technologist with a background in Information Systems (BBA, Kennesaw State University, CS minor) and hands-on experience in SQL, data warehousing, analytics, and Python automation. This repository showcases my personal projects and technical skills.
+I build data products that connect operational systems to business decisions. My range: **advanced SQL and BI engineering** (BigQuery, SQL Server, Tableau), **data warehousing and ETL**, and **real-time Python systems**. Professionally that has meant enterprise delivery analytics at Home Depot (reporting used by 200+ field and leadership users) and earlier analytics roles at UPS and UL Environment; personally it means a home lab of 24/7 systems. Information Systems BBA (Kennesaw State University, CS minor).
 
 📫 **Contact:** ciccomatthew@gmail.com · 🌐 **Website:** [cloud-data92.github.io/Portfolio](https://cloud-data92.github.io/Portfolio/)
+
+---
+
+## 🧭 Quick Tour — find what you came to see
+
+| Looking for evidence of… | Start here |
+|---|---|
+| **Advanced SQL on real business problems** | [Enterprise Delivery Analytics](projects/enterprise-delivery-analytics/) — 10 case studies, each opening with the business problem |
+| **SQL you can run yourself** | [SQL Stock Market Analytics](projects/sql-stock-analytics/) — clone it, two commands, every result reproduces |
+| **Data engineering & ETL discipline** | [ETL → Star-Schema Warehouse](projects/etl-data-warehouse/) and [case study 10](projects/enterprise-delivery-analytics/sql/10_incremental_merge_architecture.sql) (incremental `MERGE`) |
+| **Real-time Python / systems engineering** | [PolyBot](projects/trading-bot/) — async engine, live order books, risk gates, dashboard |
+| **Practical, bounded AI integration** | PolyBot's [advisory-only LLM sidecar](projects/trading-bot/#the-ai-advisor-sidecar) and the [local-AI Discord bots](projects/discord-bots/) |
+| **Visualization & Tableau thinking** | The [KPI heatmap](projects/enterprise-delivery-analytics/#the-kpi-heatmap), the [SQL result charts](projects/sql-stock-analytics/#visualized-results), PolyBot's live dashboard |
+| **Data quality & validation habits** | [Validation query suite](projects/enterprise-delivery-analytics/validation/data_quality_checks.sql) and the ETL project's reject quarantine |
 
 ---
 
@@ -10,6 +24,7 @@ Data-focused technologist with a background in Information Systems (BBA, Kennesa
 
 | Project | What it shows | Status |
 |---|---|---|
+| [🚚 Enterprise Delivery Analytics](projects/enterprise-delivery-analytics/) | 10 sanitized enterprise logistics case studies — route/slot utilization, BigQuery geospatial serviceability, delivery-attempt modeling, KPI scoring, cross-system reconciliation, incremental BI architecture | ✅ Case studies published |
 | [📊 SQL Stock Market Analytics](projects/sql-stock-analytics/) | Advanced SQL: schema design, joins, CTEs, window functions, portfolio P&L analysis, plus a Tableau-ready data pipeline | ✅ Complete & runnable |
 | [🏗️ ETL Pipeline → Star-Schema Warehouse](projects/etl-data-warehouse/) | Production-style ETL: messy-data cleansing, reject quarantine, data-quality gates, Kimball dimensional modeling, idempotent loads, unit tests | ✅ Complete & runnable |
 | [📈 PolyBot — Trading Engine](projects/trading-bot/) | 24/7 async Python engine for Polymarket BTC binary markets: multi-timeframe momentum signals, Kelly-criterion sizing, SQLite trade history, real-time dashboard, and an LLM advisor that can suggest but never execute | ✅ Migrated & documented |
