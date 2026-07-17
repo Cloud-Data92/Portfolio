@@ -1,0 +1,50 @@
+order_id,order_date,store,sku,product_name,category,quantity,unit_price,reject_reason
+141335,05/16/2025,Kennesaw,SKU-2001,Office Chair,Furniture,N/A, 189.00 ,invalid literal for int() with base 10: 'N/A'
+142601,03/03/2025,KENNESAW,,Standing Desk,Furniture,2,349.00,missing sku
+141480,02/05/2025,ALPHARETTA,SKU-3002,Gel Pens 12ct,Office Supplies,-2,11.99,non-positive quantity: '-2'
+142325,02/03/2025,Atlanta,,Desk Organizer,Office Supplies,5,21.50,missing sku
+142469,2025-05-21,Alpharetta,SKU-3001,Notebook 3-Pack,Office Supplies,N/A,8.49,invalid literal for int() with base 10: 'N/A'
+140906,03/14/2025,KENNESAW,,USB-C Hub,Electronics,3,39.99,missing sku
+140597,04/09/2025,SMYRNA,SKU-1003,USB-C Hub,Electronics,-2,$39.99,non-positive quantity: '-2'
+140633,2025-02-13,Kennesaw,,Office Chair,Furniture,6,189.00,missing sku
+140362,28-Mar-2025,Atlanta,,Gel Pens 12ct,Office Supplies,3,11.99,missing sku
+142419,06/30/2025,Atlanta,SKU-1002,Mechanical Keyboard,Electronics,-2,$89.99,non-positive quantity: '-2'
+142159,2025-04-04,Kennesaw,SKU-3002,Gel Pens 12ct,Office Supplies,, 11.99 ,invalid literal for int() with base 10: ''
+140873,03/25/2025,Marietta,,Office Chair,Furniture,3,189.00,missing sku
+141667,08-Apr-2025,atlanta,,Wireless Mouse,Electronics,5, 24.99 ,missing sku
+140871,2025-03-20,Alpharetta,,Mechanical Keyboard,Electronics,4, 89.99 ,missing sku
+140190,01/11/2025,Alpharetta,,Gel Pens 12ct,Office Supplies,6,11.99,missing sku
+141608,28-May-2025,Marietta,,Standing Desk,Furniture,3, 349.00 ,missing sku
+142268,2025-06-26,SMYRNA,SKU-1003,USB-C Hub,Electronics,,39.99,invalid literal for int() with base 10: ''
+142531,2025-06-28,Alpharetta,SKU-1002,Mechanical Keyboard,Electronics,N/A,$89.99,invalid literal for int() with base 10: 'N/A'
+141602,2025-05-07,Atlanta,SKU-1003,USB-C Hub,Electronics,, 39.99 ,invalid literal for int() with base 10: ''
+141757,02/20/2025,atlanta,SKU-3001,Notebook 3-Pack,Office Supplies,-2,8.49,non-positive quantity: '-2'
+141905,05/31/2025,alpharetta,SKU-2001,Office Chair,Furniture,-2,$189.00,non-positive quantity: '-2'
+142861,01/21/2025,Alpharetta,SKU-3001,Notebook 3-Pack,Office Supplies,,8.49,invalid literal for int() with base 10: ''
+142259,2025-05-17,Marietta,,Desk Organizer,Office Supplies,2,$21.50,missing sku
+140723,06-Feb-2025,Kennesaw,,Office Chair,Furniture,3,189.00,missing sku
+140557,2025-03-10,Kennesaw,SKU-3001,Notebook 3-Pack,Office Supplies,,8.49,invalid literal for int() with base 10: ''
+140619,2025-03-02,atlanta,,Mechanical Keyboard,Electronics,6,$89.99,missing sku
+140468,05/13/2025,MARIETTA,,Gel Pens 12ct,Office Supplies,6,$11.99,missing sku
+140410,01/20/2025,Marietta,SKU-3001,Notebook 3-Pack,Office Supplies,-2,$8.49,non-positive quantity: '-2'
+142832,2025-01-23,smyrna,,Wireless Mouse,Electronics,3,$24.99,missing sku
+141884,2025-06-25,alpharetta,,Gel Pens 12ct,Office Supplies,6,11.99,missing sku
+142843,2025-06-01,Alpharetta,SKU-2001,Office Chair,Furniture,-2,189.00,non-positive quantity: '-2'
+142921,2025-03-25,Alpharetta,SKU-2002,Standing Desk,Furniture,,$349.00,invalid literal for int() with base 10: ''
+140555,03/24/2025,Kennesaw,,Notebook 3-Pack,Office Supplies,2,$8.49,missing sku
+141693,2025-06-04,Smyrna,,Mechanical Keyboard,Electronics,3,89.99,missing sku
+140039,2025-02-20,Kennesaw,,Notebook 3-Pack,Office Supplies,3,8.49,missing sku
+140251,2025-03-21,Marietta,,Wireless Mouse,Electronics,2,24.99,missing sku
+142477,11-May-2025,Marietta,,USB-C Hub,Electronics,6,39.99,missing sku
+141012,05/07/2025,Atlanta,,USB-C Hub,Electronics,3,39.99,missing sku
+141734,22-Jun-2025,Marietta,SKU-1003,USB-C Hub,Electronics,N/A,$39.99,invalid literal for int() with base 10: 'N/A'
+140857,2025-01-19,Atlanta,,Gel Pens 12ct,Office Supplies,5,11.99,missing sku
+140674,09-Jan-2025,Atlanta,SKU-1003,USB-C Hub,Electronics,-2,$39.99,non-positive quantity: '-2'
+141635,04/26/2025,ATLANTA,SKU-3002,Gel Pens 12ct,Office Supplies,-2, 11.99 ,non-positive quantity: '-2'
+141422,03/01/2025,smyrna,,Gel Pens 12ct,Office Supplies,4,11.99,missing sku
+140734,2025-05-31,Alpharetta,,Gel Pens 12ct,Office Supplies,2,11.99,missing sku
+140260,26-Mar-2025,Kennesaw,,Notebook 3-Pack,Office Supplies,5,8.49,missing sku
+140063,04/29/2025,Smyrna,,Desk Organizer,Office Supplies,4, 21.50 ,missing sku
+141389,2025-03-06,Marietta,SKU-2001,Office Chair,Furniture,N/A,189.00,invalid literal for int() with base 10: 'N/A'
+142030,2025-02-13,KENNESAW,,USB-C Hub,Electronics,5,39.99,missing sku
+140587,2025-06-13,Alpharetta,SKU-3003,Desk Organizer,Office Supplies,N/A,21.50,invalid literal for int() with base 10: 'N/A'

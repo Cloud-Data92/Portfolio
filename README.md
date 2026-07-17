@@ -2,7 +2,7 @@
 
 Data-focused technologist with a background in Information Systems (BBA, Kennesaw State University, CS minor) and hands-on experience in SQL, data warehousing, analytics, and Python automation. This repository showcases my personal projects and technical skills.
 
-📫 **Contact:** ciccomatthew@gmail.com
+📫 **Contact:** ciccomatthew@gmail.com · 🌐 **Website:** [cloud-data92.github.io/Portfolio](https://cloud-data92.github.io/Portfolio/)
 
 ---
 
@@ -11,6 +11,7 @@ Data-focused technologist with a background in Information Systems (BBA, Kennesa
 | Project | What it shows | Status |
 |---|---|---|
 | [📊 SQL Stock Market Analytics](projects/sql-stock-analytics/) | Advanced SQL: schema design, joins, CTEs, window functions, portfolio P&L analysis, plus a Tableau-ready data pipeline | ✅ Complete & runnable |
+| [🏗️ ETL Pipeline → Star-Schema Warehouse](projects/etl-data-warehouse/) | Production-style ETL: messy-data cleansing, reject quarantine, data-quality gates, Kimball dimensional modeling, idempotent loads, unit tests | ✅ Complete & runnable |
 | [🤖 Discord Bots](projects/discord-bots/) | Python, event-driven programming, API integration, deployment on always-on hardware (Mac mini home server) | 🚧 Code migration in progress |
 | [📈 Automated Trading Bot](projects/trading-bot/) | Python, broker/market-data APIs, strategy logic, risk management, scheduled automation | 🚧 Code migration in progress |
 
