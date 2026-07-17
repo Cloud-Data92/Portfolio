@@ -1,6 +1,6 @@
 # Matthew Cicco — Project Portfolio
 
-Data-focused technologist with a background in Information Systems (BBA, Kennesaw State University, CS minor) and hands-on experience in SQL, data warehousing, analytics, and Python automation. This repository showcases my personal projects and technical skills.
+I build data products that connect operational systems to business decisions. At **Home Depot**, my work centered on final-mile delivery analytics — routing, slot capacity, pallet allocation, geospatial serviceability, and SQL/Tableau reporting used by 200+ field and leadership users. Information Systems graduate (BBA, Kennesaw State University, CS minor) with earlier data-analytics roles at UPS and UL Environment, plus a home lab of Python systems running 24/7.
 
 📫 **Contact:** ciccomatthew@gmail.com · 🌐 **Website:** [cloud-data92.github.io/Portfolio](https://cloud-data92.github.io/Portfolio/)
 
@@ -10,6 +10,7 @@ Data-focused technologist with a background in Information Systems (BBA, Kennesa
 
 | Project | What it shows | Status |
 |---|---|---|
+| [🚚 Enterprise Delivery Analytics](projects/enterprise-delivery-analytics/) | **The primary story:** 10 sanitized Home Depot case studies — route/slot utilization, BigQuery geospatial serviceability, delivery-attempt modeling, KPI scoring, cross-system reconciliation, incremental BI architecture | ✅ Case studies published |
 | [📊 SQL Stock Market Analytics](projects/sql-stock-analytics/) | Advanced SQL: schema design, joins, CTEs, window functions, portfolio P&L analysis, plus a Tableau-ready data pipeline | ✅ Complete & runnable |
 | [🏗️ ETL Pipeline → Star-Schema Warehouse](projects/etl-data-warehouse/) | Production-style ETL: messy-data cleansing, reject quarantine, data-quality gates, Kimball dimensional modeling, idempotent loads, unit tests | ✅ Complete & runnable |
 | [📈 PolyBot — Trading Engine](projects/trading-bot/) | 24/7 async Python engine for Polymarket BTC binary markets: multi-timeframe momentum signals, Kelly-criterion sizing, SQLite trade history, real-time dashboard, and an LLM advisor that can suggest but never execute | ✅ Migrated & documented |
