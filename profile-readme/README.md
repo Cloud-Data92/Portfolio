@@ -1,6 +1,6 @@
 # 👋 Hi, I'm Matthew Cicco
 
-**Data & systems analyst** — I turn complex delivery and capacity operations into reliable SQL models, actionable dashboards, and supportable data systems. At **The Home Depot** I built the analytics layer behind final-mile delivery: BigQuery and SQL Server logic for routing, slot capacity, and geospatial serviceability, plus Tableau KPI reporting used by 200+ field and leadership users. BBA in Information Systems (Kennesaw State, CS minor); earlier analytics roles at UPS and UL Environment; a home lab of Python systems running 24/7 on a Mac mini.
+**Data & systems analyst** — advanced SQL and BI engineering, data warehousing, and real-time Python systems. Professionally: enterprise delivery analytics at The Home Depot (BigQuery, SQL Server, and Tableau reporting used by 200+ field and leadership users), with earlier analytics roles at UPS and UL Environment. Personally: a home lab of 24/7 systems on a Mac mini. BBA in Information Systems (Kennesaw State, CS minor).
 
 ## 🔭 Highlights
 

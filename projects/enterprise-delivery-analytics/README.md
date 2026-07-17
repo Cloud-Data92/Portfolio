@@ -1,6 +1,6 @@
 # 🚚 Enterprise Delivery Analytics — SQL & Systems Case Studies
 
-**Home Depot final-mile delivery operations: routing, capacity, geospatial serviceability, KPI reporting, and the reliability of the analytics layer behind them.**
+**Last-mile delivery at enterprise scale: routing, capacity, geospatial serviceability, KPI reporting, and the reliability of the analytics layer behind them.**
 
 At Home Depot, my work centered on the data systems supporting final-mile delivery — car/van and flatbed delivery, slot-based capacity markets, pallet allocation, route utilization, and the SQL/Tableau reporting used by field teams and leadership. I built a large-scale logistics report used by **200+ field and leadership users**, owned pallet-calculation logic feeding downstream planning systems, and supported major initiatives including an always-on operations transition, flatbed delivery center integration, and a slot-based capacity-engine pilot.
 
