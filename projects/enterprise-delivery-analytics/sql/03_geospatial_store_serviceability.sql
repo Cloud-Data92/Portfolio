@@ -15,7 +15,9 @@
 -- Supports facility launches, ZIP/service-area design, routing assumptions,
 -- market coverage analysis, and exception investigation.
 --
--- NOTE: sanitized reconstruction — `portfolio_demo` replaces production names.
+-- PROVENANCE: original SQL written for this portfolio against an invented
+-- schema. Not employer code; contains no production identifiers, data, or
+-- configuration. See NOTICE.md at the repository root.
 -- ============================================================================
 
 WITH facilities AS (

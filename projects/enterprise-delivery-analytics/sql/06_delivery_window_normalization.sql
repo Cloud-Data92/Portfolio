@@ -16,7 +16,9 @@
 -- filter would silently remove future or non-archive schedules and change the
 -- meaning of the report.
 --
--- NOTE: sanitized reconstruction — table and column names are generalized.
+-- PROVENANCE: original SQL written for this portfolio against an invented
+-- schema. Not employer code; contains no production identifiers, data, or
+-- configuration. See NOTICE.md at the repository root.
 -- ============================================================================
 
 SELECT

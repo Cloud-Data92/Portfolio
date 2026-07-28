@@ -12,8 +12,9 @@
 --   * A zero denominator must never break a dashboard or scheduled query
 --   * Output must roll up to route, truck, domicile, and market level
 --
--- NOTE: sanitized reconstruction of production logic — table and column names
--- are generalized; no proprietary data or configuration is included.
+-- PROVENANCE: original SQL written for this portfolio against an invented
+-- schema. Not employer code; contains no production identifiers, data, or
+-- configuration. See NOTICE.md at the repository root.
 -- ============================================================================
 
 WITH route_base AS (

@@ -12,8 +12,9 @@
 --   * Utilization = pallets sold / slot capacity, safe against zero capacity
 --   * Dynamic current-week filter (never hard-coded dates)
 --
--- NOTE: sanitized reconstruction — `portfolio_demo` replaces production
--- project/dataset names.
+-- PROVENANCE: original SQL written for this portfolio against an invented
+-- schema. Not employer code; contains no production identifiers, data, or
+-- configuration. See NOTICE.md at the repository root.
 -- ============================================================================
 
 WITH parameters AS (

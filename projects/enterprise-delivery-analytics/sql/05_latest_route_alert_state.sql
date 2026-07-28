@@ -10,7 +10,9 @@
 -- temporal-state problem: preserve the whole latest record, break timestamp
 -- ties deterministically, then enrich from a code dimension.
 --
--- NOTE: sanitized reconstruction — `portfolio_demo` replaces production names.
+-- PROVENANCE: original SQL written for this portfolio against an invented
+-- schema. Not employer code; contains no production identifiers, data, or
+-- configuration. See NOTICE.md at the repository root.
 -- ============================================================================
 
 WITH ranked_alerts AS (

@@ -29,7 +29,9 @@
 -- Different freshness and performance needs = different data products,
 -- sharing conformed dimensions (market, carrier, fiscal week, store, vehicle).
 --
--- NOTE: sanitized reconstruction — `portfolio_demo` replaces production names.
+-- PROVENANCE: original SQL written for this portfolio against an invented
+-- schema. Not employer code; contains no production identifiers, data, or
+-- configuration. See NOTICE.md at the repository root.
 -- ============================================================================
 
 -- Idempotent incremental load with a two-day lookback for late updates.
