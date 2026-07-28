@@ -13,8 +13,9 @@
 -- The scored output fed the market KPI heatmap used for routing and capacity
 -- decisions (see assets/kpi_heatmap.png for the visual layout).
 --
--- NOTE: sanitized reconstruction — the Capacity and Quality weights shown are
--- illustrative public values, not production configuration.
+-- PROVENANCE: original SQL written for this portfolio against an invented
+-- schema. Not employer code; contains no production identifiers, data, or
+-- configuration. See NOTICE.md at the repository root.
 -- ============================================================================
 
 WITH weights AS (

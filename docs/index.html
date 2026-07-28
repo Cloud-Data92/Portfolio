@@ -99,6 +99,14 @@
   .timeline h3 { font-size: 1.05rem; margin: 2px 0 4px; }
   .timeline p { color: var(--muted); font-size: 0.95rem; max-width: 44em; }
 
+  /* ── Screenshots ── */
+  .shot { margin: 18px 0 0; }
+  .shot img {
+    width: 100%; max-width: 100%; height: auto; display: block;
+    border: 1px solid var(--border); border-radius: 8px;
+  }
+  .shot figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 8px; }
+
   footer { padding: 36px 0 56px; color: var(--muted); font-size: 0.9rem; }
   @media (max-width: 560px) {
     header { padding: 48px 0 36px; }
@@ -123,13 +131,15 @@
   <div class="wrap">
     <h2><span class="mark">01.</span> About</h2>
     <p class="lede">
-      My work sits at the intersection of three things. <strong>SQL &amp; BI engineering:</strong> at Home Depot
-      I built the analytics layer behind final-mile delivery — route and slot-capacity utilization, geospatial
-      serviceability, KPI heatmaps, and cross-system reconciliation in BigQuery, SQL Server, and Tableau.
-      <strong>Data engineering:</strong> warehouses, ETL pipelines with quality gates, and incremental load
-      architecture that keeps millions of rows fresh. <strong>Systems &amp; automation:</strong> a 24/7 home lab
-      running my async trading engine and local-AI bots. I use SQL not just to calculate metrics but to define
-      data grain, resolve conflicting records, and encode business rules — data products people can trust.
+      I build data systems that hold up in production — where data arrives late, sources disagree, cost per query
+      is real, and someone makes a decision from the output. <strong>Analytical SQL &amp; BI:</strong> I built the
+      analytics layer for a national retail delivery network — capacity utilization, geospatial serviceability,
+      KPI scoring, and cross-system reconciliation in BigQuery, SQL Server, and Tableau, reaching 200+ field and
+      leadership users. <strong>Data engineering:</strong> dimensional warehouses, ETL with quality gates, and
+      incremental load architecture that keeps millions of rows fresh without full refreshes.
+      <strong>Systems &amp; automation:</strong> a 24/7 home lab running an async trading engine and local-AI
+      services. I use SQL not just to calculate metrics but to define grain, resolve conflicting records, and
+      encode business rules — data products people can trust.
       Earlier analytics roles at UPS and UL Environment; Information Systems BBA (Kennesaw State, CS minor).
     </p>
   </div>
@@ -162,7 +172,7 @@
           <span class="tag">Tableau</span><span class="tag">KPI heatmaps</span>
           <span class="tag">Excel / Power Pivot</span><span class="tag">Executive reporting</span>
         </div>
-        <p>Market KPI heatmaps and scorecards for Home Depot routing and capacity decisions; separated KPI vs. detail extracts with independent refresh schedules.</p>
+        <p>Semantic-layer design that keeps metric definitions in SQL and presentation in Tableau; LOD expressions, exception-first dashboards, and split KPI/detail extracts with independent refresh schedules.</p>
       </div>
       <div class="skill-card">
         <h3>Python &amp; Automation</h3>
@@ -183,14 +193,19 @@
 
     <div class="project">
       <h3>🚚 Enterprise Delivery Analytics — Last-Mile Logistics Case Studies <span class="status done">PUBLISHED</span></h3>
-      <p class="meta">BigQuery · SQL Server · Tableau · Geospatial SQL · Data quality</p>
-      <p>Ten sanitized case studies from my enterprise work at Home Depot: route-hours and slot-capacity utilization, geospatial store serviceability, customer-order delivery-attempt modeling, current alert state, weighted market KPI scoring, cross-system reconciliation, and incremental BigQuery→Tableau architecture. Built a logistics report used by 200+ field and leadership users; owned pallet-calculation logic feeding downstream planning systems.</p>
+      <p class="meta">BigQuery · SQL Server · Tableau · Geospatial SQL · Cost engineering</p>
+      <p>Ten case studies working the hard problems in last-mile delivery analytics: capacity utilization, geospatial store serviceability, delivery-attempt modeling, current-state alerting, weighted market KPI scoring, cross-system reconciliation, and incremental BigQuery→Tableau load architecture — with a full operations dashboard and a cost/performance analysis.</p>
       <ul>
-        <li>BigQuery GIS serviceability ranking (<code>ST_GEOGPOINT</code>, <code>ST_DWITHIN</code>, deterministic top-N)</li>
+        <li>BigQuery GIS serviceability ranking (<code>ST_GEOGPOINT</code>, <code>ST_DWITHIN</code>, deterministic top-N) that prunes 82M candidate pairs to ~180K</li>
         <li>Grain-controlled rollups, safe math (<code>SAFE_DIVIDE</code>, <code>NULLIF</code>), and exception taxonomies designed for action</li>
-        <li>Idempotent incremental <code>MERGE</code> loads with late-data lookbacks, partitioning, and split KPI/detail Tableau extracts</li>
+        <li>Idempotent incremental <code>MERGE</code> with late-data lookback — ~180× less scanned per run than full refresh</li>
+        <li>Tableau semantic layer: LOD expressions, the SQL/BI boundary, and split KPI/detail extract architecture</li>
       </ul>
       <a href="https://github.com/Cloud-Data92/Portfolio/tree/main/projects/enterprise-delivery-analytics">Read the case studies →</a>
+      <figure class="shot">
+        <img src="assets/tableau_dashboard.png" alt="Delivery operations dashboard: KPI tiles for on-time rate, slot utilization, failure rate and routes completed; a market-by-fiscal-week utilization heatmap; market priority score bars; an on-time trend against a rolling baseline; and a table of exceptions requiring action" loading="lazy">
+        <figcaption>The operations dashboard these queries serve — exception-first layout, sequential ramp for magnitude, reserved status colors for state. Synthetic data.</figcaption>
+      </figure>
     </div>
 
     <div class="project">
@@ -237,11 +252,11 @@
   <div class="wrap">
     <h2><span class="mark">04.</span> Experience</h2>
     <ul class="timeline">
-      <!-- TODO(Matt): confirm exact Home Depot title and start/end dates -->
+      <!-- TODO(Matt): confirm exact title and start/end dates -->
       <li>
         <span class="when">Most recent</span>
         <h3>Delivery Operations Data &amp; Systems · The Home Depot</h3>
-        <p>Analytics and systems layer for final-mile delivery: SQL/Tableau KPI reporting and heatmaps for routing and capacity, pallet-calculation ownership, geospatial serviceability analysis, cross-system data reconciliation, and delivery-system integration support — including an always-on operations transition, flatbed delivery center enablement, and a slot-based capacity-engine pilot. Built a logistics report used by 200+ internal users.</p>
+        <p>Built and owned the analytics layer for final-mile delivery operations: SQL and Tableau KPI reporting for routing and capacity decisions, capacity-calculation logic feeding downstream planning systems, geospatial serviceability analysis, and cross-system data reconciliation — plus support for several delivery-platform migrations and pilots. Reporting I owned reached 200+ field and leadership users.</p>
       </li>
       <li>
         <span class="when">2018 — 2019</span>

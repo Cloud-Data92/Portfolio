@@ -12,11 +12,12 @@
 --   * The result feeds operational planning and downstream systems
 --   * Demand must trace from order lines -> orders -> routes -> trucks -> markets
 --
--- This logic fed downstream systems, so auditability mattered as much as the
--- numbers themselves.
+-- When capacity logic feeds downstream planning systems rather than only a
+-- dashboard, auditability matters as much as the numbers themselves.
 --
--- NOTE: sanitized reconstruction — demo segment values; no production
--- capacity thresholds or market configurations are included.
+-- PROVENANCE: original SQL written for this portfolio against an invented
+-- schema. Not employer code; contains no production identifiers, data, or
+-- configuration. See NOTICE.md at the repository root.
 -- ============================================================================
 
 WITH order_pallets AS (

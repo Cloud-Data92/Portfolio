@@ -15,7 +15,9 @@
 -- SURFACE instead of disappearing, and classifies every order into an
 -- actionable exception taxonomy.
 --
--- NOTE: sanitized reconstruction — `portfolio_demo` replaces production names.
+-- PROVENANCE: original SQL written for this portfolio against an invented
+-- schema. Not employer code; contains no production identifiers, data, or
+-- configuration. See NOTICE.md at the repository root.
 -- ============================================================================
 
 WITH order_latest AS (

@@ -15,8 +15,9 @@
 -- The core issue is GRAIN: the source is status-event level, the business
 -- question is customer-order level.
 --
--- NOTE: sanitized reconstruction — demo status codes; `portfolio_demo`
--- replaces production names.
+-- PROVENANCE: original SQL written for this portfolio against an invented
+-- schema. Not employer code; contains no production identifiers, data, or
+-- configuration. See NOTICE.md at the repository root.
 -- ============================================================================
 
 WITH order_rollup AS (
