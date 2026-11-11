@@ -10,7 +10,7 @@
 --
 -- Headcount on a date is a POINT-IN-TIME question: for every employee, what
 -- was their most recent event on or before that date? This file builds that
--- once, as a curated table the other analyses read, then answers the two
+-- once, as a curated table the other analyses read, then answers the
 -- leadership questions from it.
 --
 -- PROVENANCE: original SQL written for this portfolio against an invented
@@ -154,6 +154,29 @@ LEFT JOIN terminations AS t
   ON t.org_id = a.org_id AND t.period = a.period
 GROUP BY o.org_name
 ORDER BY change_pts DESC;
+
+-- ----------------------------------------------------------------------------
+-- Q3. The same comparison one level up: plan vs. actual by function
+-- A VP owns a function, not an org. Headcount is summed to the function
+-- FIRST and the percentage taken afterwards; averaging the orgs' percentages
+-- would weight a 60-person team the same as a 200-person one.
+-- ----------------------------------------------------------------------------
+SELECT
+    o.function_name,
+    SUM(p.planned_headcount)                                 AS planned_headcount,
+    SUM(COALESCE(h.headcount, 0))                            AS actual_headcount,
+    SUM(COALESCE(h.headcount, 0)) - SUM(p.planned_headcount) AS variance,
+    ROUND(100 * SAFE_DIVIDE(SUM(COALESCE(h.headcount, 0)) - SUM(p.planned_headcount),
+                            SUM(p.planned_headcount)), 1)    AS variance_pct
+FROM `stratops_demo.headcount_plan` AS p
+JOIN `stratops_demo.orgs` AS o
+  ON o.org_id = p.org_id
+LEFT JOIN `stratops_demo.month_end_headcount` AS h
+  ON h.org_id = p.org_id
+ AND h.month_end = p.quarter_end_date
+WHERE p.quarter_end_date = DATE '2026-09-30'
+GROUP BY o.function_name
+ORDER BY variance_pct;
 
 -- ============================================================================
 -- DESIGN DECISIONS

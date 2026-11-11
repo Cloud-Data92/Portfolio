@@ -1,0 +1,4 @@
+function_name,planned_headcount,actual_headcount,variance,variance_pct
+Operations,486,450,-36,-7.4
+Engineering,340,330,-10,-2.9
+Planning,165,171,6,3.6

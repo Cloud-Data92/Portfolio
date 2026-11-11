@@ -42,6 +42,14 @@ All figures are from the committed outputs, as of 2026-10-31 in the synthetic da
 | Network Engineering | 165 | 154 | −11 (−6.7%) | 11.2% | 11.8% |
 | Site Operations East | 200 | 188 | −12 (−6.0%) | 26.4% | 15.0% |
 
+Rolled up to the function level, the shortfall sits in Operations ([01, query 3](outputs/01_headcount_plan_vs_actual__q3.csv)):
+
+| Function | Q3 plan | Q3 actual | Variance |
+|---|---|---|---|
+| Operations | 486 | 450 | −36 (−7.4%) |
+| Engineering | 340 | 330 | −10 (−2.9%) |
+| Planning | 165 | 171 | +6 (+3.6%) |
+
 **The gap widens under every scenario, and freezing hiring doubles it.** Projected organization-wide gap to plan at year end ([04](outputs/04_headcount_what_if_scenarios__q1.csv)):
 
 | Scenario | Projected Dec 31 | Plan | Gap Dec 31 | Gap Mar 31 |
