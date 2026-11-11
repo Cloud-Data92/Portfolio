@@ -8,3 +8,4 @@ check_id,check_name,severity,failing_rows,impact
 7,Key results whose target contradicts their direction,HIGH,0,Progress would be computed backwards
 8,Missing days in daily KPI series,MEDIUM,1,Baselines in 03 shift by a day; the gap is also raised as its own alert
 9,Orgs with no headcount plan for the current quarter,HIGH,0,Plan-vs-actual and the scenario gaps in 04 would silently drop the org
+10,Percentage KPI readings outside 0-100,HIGH,0,An impossible value drags the baseline in 03 and can trigger or mask an alert

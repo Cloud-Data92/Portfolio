@@ -23,7 +23,7 @@ The `.sql` files are BigQuery Standard SQL and are the source of truth. `run.py`
 | 02 | [OKR progress and pacing](sql/02_okr_progress_and_pacing.sql) | Which objectives are behind for this point in the quarter, and which have gone quiet? | Latest-record selection, direction-agnostic progress, weighted roll-up, staleness rules |
 | 03 | [Automated KPI alerts](sql/03_kpi_anomaly_alerts.sql) | Which metrics moved more than normal variation explains? Is any data missing? | Named windows, same-weekday baselines, residual z-scores, `LAG` gap detection |
 | 04 | [Headcount what-if scenarios](sql/04_headcount_what_if_scenarios.sql) | Where do we land against plan if nothing changes, if we freeze hiring, if we fix retention? | Scenario table × closed-form projection, `GENERATE_ARRAY`, `POW`, pivot by conditional aggregation |
-| 05 | [Data-quality scorecard](sql/05_data_quality_checks.sql) | Can today's numbers be trusted? | Nine counted checks with severity and stated downstream impact |
+| 05 | [Data-quality scorecard](sql/05_data_quality_checks.sql) | Can today's numbers be trusted? | Ten counted checks with severity and stated downstream impact |
 
 Each file opens with the business problem and closes with its design decisions.
 

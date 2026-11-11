@@ -100,4 +100,12 @@ SELECT 9, 'Orgs with no headcount plan for the current quarter', 'HIGH',
         WHERE p.org_id IS NULL),
        'Plan-vs-actual and the scenario gaps in 04 would silently drop the org'
 
+UNION ALL
+SELECT 10, 'Percentage KPI readings outside 0-100', 'HIGH',
+       (SELECT COUNT(*)
+        FROM `stratops_demo.kpi_daily`
+        WHERE metric_name LIKE '%_pct'
+          AND (metric_value < 0 OR metric_value > 100)),
+       'An impossible value drags the baseline in 03 and can trigger or mask an alert'
+
 ORDER BY check_id;
