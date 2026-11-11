@@ -1,0 +1,41 @@
+org_name,scenario,headcount_today,projected_dec_31,plan_dec_31,gap_dec_31,projected_mar_31,plan_mar_31,gap_mar_31
+Capacity Planning,Current trend,109,113,111,2,119,116,3
+Capacity Planning,Hiring freeze,109,108,111,-3,105,116,-11
+Capacity Planning,Hiring +25%,109,114,111,3,122,116,6
+Capacity Planning,Retention program,109,113,111,2,120,116,4
+Capacity Planning,Hiring +25% and retention program,109,115,111,4,123,116,7
+Demand Forecasting,Current trend,66,68,62,6,70,65,5
+Demand Forecasting,Hiring freeze,66,65,62,3,63,65,-2
+Demand Forecasting,Hiring +25%,66,68,62,6,72,65,7
+Demand Forecasting,Retention program,66,68,62,6,71,65,6
+Demand Forecasting,Hiring +25% and retention program,66,69,62,7,72,65,7
+Logistics & Supply,Current trend,123,126,126,0,129,130,-1
+Logistics & Supply,Hiring freeze,123,120,126,-6,115,130,-15
+Logistics & Supply,Hiring +25%,123,127,126,1,133,130,3
+Logistics & Supply,Retention program,123,126,126,0,131,130,1
+Logistics & Supply,Hiring +25% and retention program,123,128,126,2,135,130,5
+Network Engineering,Current trend,155,159,172,-13,164,179,-15
+Network Engineering,Hiring freeze,155,152,172,-20,148,179,-31
+Network Engineering,Hiring +25%,155,160,172,-12,168,179,-11
+Network Engineering,Retention program,155,159,172,-13,166,179,-13
+Network Engineering,Hiring +25% and retention program,155,161,172,-11,170,179,-9
+Program Management,Current trend,56,55,64,-9,54,65,-11
+Program Management,Hiring freeze,56,54,64,-10,51,65,-14
+Program Management,Hiring +25%,56,55,64,-9,54,65,-11
+Program Management,Retention program,56,56,64,-8,55,65,-10
+Program Management,Hiring +25% and retention program,56,56,64,-8,55,65,-10
+Reliability Engineering,Current trend,120,124,117,7,131,122,9
+Reliability Engineering,Hiring freeze,120,118,117,1,116,122,-6
+Reliability Engineering,Hiring +25%,120,126,117,9,134,122,12
+Reliability Engineering,Retention program,120,125,117,8,132,122,10
+Reliability Engineering,Hiring +25% and retention program,120,126,117,9,135,122,13
+Site Operations East,Current trend,192,197,208,-11,204,217,-13
+Site Operations East,Hiring freeze,192,187,208,-21,180,217,-37
+Site Operations East,Hiring +25%,192,199,208,-9,210,217,-7
+Site Operations East,Retention program,192,198,208,-10,207,217,-10
+Site Operations East,Hiring +25% and retention program,192,200,208,-8,213,217,-4
+Site Operations West,Current trend,144,143,170,-27,142,177,-35
+Site Operations West,Hiring freeze,144,134,170,-36,120,177,-57
+Site Operations West,Hiring +25%,144,146,170,-24,148,177,-29
+Site Operations West,Retention program,144,146,170,-24,148,177,-29
+Site Operations West,Hiring +25% and retention program,144,148,170,-22,154,177,-23

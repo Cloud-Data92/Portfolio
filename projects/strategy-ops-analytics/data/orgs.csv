@@ -1,0 +1,9 @@
+org_id,org_name,function_name
+ORG01,Capacity Planning,Planning
+ORG02,Demand Forecasting,Planning
+ORG03,Site Operations East,Operations
+ORG04,Site Operations West,Operations
+ORG05,Logistics & Supply,Operations
+ORG06,Network Engineering,Engineering
+ORG07,Reliability Engineering,Engineering
+ORG08,Program Management,Engineering

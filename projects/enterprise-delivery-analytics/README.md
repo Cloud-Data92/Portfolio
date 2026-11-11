@@ -4,7 +4,7 @@
 
 Last-mile delivery is a rich source of genuinely hard data problems: the data is high-volume and late-arriving, several systems disagree about the same order, capacity is a hard physical constraint, and the output drives decisions that move trucks. My professional background is in exactly this domain — building the analytics layer for a national retail delivery network, where reporting I owned reached 200+ field and leadership users and my capacity logic fed downstream planning systems.
 
-This project works ten of those problem classes end to end, in BigQuery and T-SQL.
+This project works thirteen of those problem classes end to end, in BigQuery and T-SQL. Case studies 11–13 are also **executable**: they run against a seeded synthetic event dataset (regenerated with one command) and their results are checked in.
 
 > **What this is:** original SQL written for this repository, against schemas invented for it, demonstrating industry-standard techniques on well-known categories of logistics problem. It is **not** any employer's code — no production query, schema, configuration, or data has been copied here, and no internal identifiers, thresholds, or program names appear. Every number shown is synthetic and produced by the scripts committed alongside. See [NOTICE.md](../../NOTICE.md) for the full provenance statement.
 
@@ -12,7 +12,7 @@ This project works ten of those problem classes end to end, in BigQuery and T-SQ
 
 ## The Case Studies
 
-Ten worked examples, each a real operational problem. Every file opens with the business problem and closes with the design decisions.
+Thirteen worked examples, each a real operational problem. Every file opens with the business problem and closes with the design decisions.
 
 | # | Case study | Business question | Key SQL techniques |
 |---|---|---|---|
@@ -26,8 +26,54 @@ Ten worked examples, each a real operational problem. Every file opens with the 
 | [08](sql/08_market_kpi_scoring.sql) | Market KPI scoring | Which markets need attention first, and *why*? | `PERCENT_RANK` normalization, metric directionality, weighted scoring |
 | [09](sql/09_cross_system_reconciliation.sql) | Cross-system reconciliation | Do the order, route, and execution systems agree? | `FULL OUTER JOIN`, latest-record dedup, actionable exception states |
 | [10](sql/10_incremental_merge_architecture.sql) | Incremental load architecture | How do millions of rows reach Tableau reliably every day? | Idempotent `MERGE`, late-data lookback, partitioning/clustering |
+| [11](sql/11_terminal_outcome_precedence.sql) ▶ | Terminal outcome precedence | What is each delivery's one true outcome, and each store's 28-day missed rate? | Status-priority lookup with `MIN(priority)`, `LEFT JOIN` denominator safety, `QUALIFY`, local-day windows |
+| [12](sql/12_event_vs_ingestion_latency.sql) ▶ | Event vs. ingestion time | How late does each carrier's data arrive, and what does that do to a time-cutoff KPI? | `TIMESTAMP_DIFF`, `APPROX_QUANTILES`, first-receipt dedup, `HAVING` on exception days |
+| [13](sql/13_pickup_dwell_time_windows.sql) ▶ | Pickup dwell time, LW / R4 / R13 | How long do drivers wait at each store, versus that store's own baseline? | Event pairing, plausibility flags, `DATE_TRUNC(WEEK(SUNDAY))`, multi-window conditional aggregation, `AT TIME ZONE` |
+
+▶ = runnable locally with committed results — see [below](#runnable-event-data-case-studies).
 
 Plus [`validation/data_quality_checks.sql`](validation/data_quality_checks.sql) — the checks that prove the models correct (grain uniqueness, conflicting attributes, bad coordinates, coverage gaps, outliers).
+
+---
+
+## Runnable Event-Data Case Studies
+
+Case studies 11–13 work on the data shape that causes the most quiet errors in delivery reporting: **status-event feeds**. One delivery produces many webhook rows; some are duplicated, some arrive hours late, and some contradict each other. [`runnable/`](runnable/) contains a seeded generator for a 15K-delivery, 75K-event synthetic dataset with those defects built in, and a runner that executes the published BigQuery SQL locally (translated to DuckDB by `sqlglot`, never hand-edited) and writes the results to [`runnable/outputs/`](runnable/outputs/).
+
+```bash
+cd runnable
+python3 generate_events.py                                   # seeded, standard library only
+uv run --with duckdb --with sqlglot python run_cases.py      # or: pip install duckdb sqlglot
+```
+
+Three results from the committed outputs:
+
+**"Take the latest row" hides a third of the misses.** Case 11 classifies each delivery with a fixed status priority (completed, then missed, then canceled) held in a small lookup. Compared with the usual shortcut of trusting the most recently ingested terminal row, over the trailing 28 days:
+
+| Priority outcome | Latest-ingested outcome | Deliveries |
+|---|---|---|
+| MISSED | CANCELED | **46** |
+| *(all other cells agree)* | | 3,414 |
+
+46 of 142 misses — 32% — would have been reported as cancellations, which is exactly the error that makes a store's missed rate look better than it is.
+
+**An average hides a feed outage; a percentile by day finds it.** Case 12's carrier-level average delay looks unremarkable (1–7 minutes). The exception query surfaces the two carrier-days that matter:
+
+| Carrier | Event date (UTC) | p95 delay | Max delay |
+|---|---|---|---|
+| Carrier C | 2026-06-12 | 867 min | 15.1 h |
+| Carrier C | 2026-06-13 | 342 min | 5.9 h |
+
+**The wrong timestamp column moves the KPI by four points.** Same deliveries, same promise times, on-time rate computed from `event_ts` versus `ingested_ts`:
+
+| Carrier | On-time % (event time) | On-time % (ingest time) | On time but reported late |
+|---|---|---|---|
+| Carrier C | 80.65 | 76.37 | 29 |
+| Carrier D | 79.49 | 77.25 | 8 |
+| Carrier A | 83.99 | 83.35 | 9 |
+| Carrier B | 84.15 | 83.76 | 4 |
+
+The numbers are synthetic; the failure modes are the ones this kind of feed produces. [`runnable/README.md`](runnable/README.md) documents the dataset, the defects seeded into it, and how the results were independently checked.
 
 ---
 
@@ -148,7 +194,9 @@ The operating principle: analytics assets are production software. Every schedul
 | Window functions (`ROW_NUMBER`, `RANK`, rolling frames, `QUALIFY`) | 05, 08, 09, 10 |
 | Geospatial analytics (BigQuery GIS) | 03 |
 | Defensive SQL (`SAFE_DIVIDE`, `NULLIF`, `SAFE_CAST`, `COALESCE`) | everywhere |
-| Data quality & reconciliation | 09, validation suite |
+| Data quality & reconciliation | 09, 12, validation suite |
+| Event-stream modeling (dedup, precedence, event vs. ingestion time, time zones) | 11, 12, 13 |
+| Reproducible, executed results | 11, 12, 13 ([runnable/](runnable/)) |
 | Capacity & operations modeling | 01, 02, 07, 08 |
 | Data engineering (incremental loads, partitioning, BI architecture) | 10 |
 | SQL Server (T-SQL) and BigQuery dialects | 01, 06 vs. 02–05, 08–10 |

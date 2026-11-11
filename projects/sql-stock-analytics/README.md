@@ -74,8 +74,6 @@ The files in `outputs/` (plus the raw `data/` CSVs) are designed to drop straigh
 - **`04_monthly_returns_ranked.csv`** → highlight table of monthly winners over time
 - **`data/daily_prices.csv`** → classic price line charts with MA overlays
 
-*Tableau Public dashboard: coming soon — link will be added here.*
-
 ## Notes
 
 - Price data is **simulated** (seeded geometric random walk per ticker) rather than scraped, which keeps the repo reproducible, license-clean, and free of API keys. The analysis layer is identical to what would run on real OHLCV data.
