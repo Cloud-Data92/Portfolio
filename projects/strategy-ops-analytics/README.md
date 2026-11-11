@@ -46,6 +46,7 @@ All figures are from the committed outputs, as of 2026-10-31 in the synthetic da
 
 | Scenario | Projected Dec 31 | Plan | Gap Dec 31 | Gap Mar 31 |
 |---|---|---|---|---|
+| Hiring +25% and retention program | 1,003 | 1,030 | −27 | −14 |
 | Hiring +25% | 995 | 1,030 | −35 | −30 |
 | Retention program (attrition −25%) | 991 | 1,030 | −39 | −41 |
 | Current trend | 985 | 1,030 | −45 | −58 |

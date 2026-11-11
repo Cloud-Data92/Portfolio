@@ -9,7 +9,7 @@ We are 40 people under plan and the gap is growing. More than half of it is one 
 ## What needs a decision
 
 **1. Site Operations West needs a retention response, not only more hiring.**
-It is 23 under plan (141 vs. 164) and annualized attrition has gone from 29% to 44% in six months. It also produced two of the five KPI alerts this quarter: an on-time delivery drop on October 6 and a cycle-time spike on October 27. Hiring 25% faster and cutting attrition by a quarter each close about the same amount of its gap by March (29 under plan either way, against 35 on the current trend). Neither closes it alone.
+It is 23 under plan (141 vs. 164) and annualized attrition has gone from 29% to 44% in six months. It also produced two of the five KPI alerts this quarter: an on-time delivery drop on October 6 and a cycle-time spike on October 27. Hiring 25% faster and cutting attrition by a quarter each close about the same amount of its gap by March (29 under plan either way, against 35 on the current trend). Neither closes it alone, and doing both still leaves it 23 under plan in March.
 
 **2. A hiring freeze is the expensive option.**
 Organization-wide, a freeze takes the year-end gap from 45 to 92, and to 173 by the end of March. If a freeze is on the table, it should exempt Site Operations West, where a freeze alone widens the March gap from 35 to 57.

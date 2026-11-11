@@ -32,6 +32,7 @@ scenarios AS (
     UNION ALL SELECT 2, 'Hiring freeze',     0.00, 1.00
     UNION ALL SELECT 3, 'Hiring +25%',       1.25, 1.00
     UNION ALL SELECT 4, 'Retention program', 1.00, 0.75
+    UNION ALL SELECT 5, 'Hiring +25% and retention program', 1.25, 0.75
 ),
 
 current_headcount AS (
