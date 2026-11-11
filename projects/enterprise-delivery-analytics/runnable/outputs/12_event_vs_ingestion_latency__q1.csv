@@ -1,0 +1,5 @@
+carrier_name,events,avg_delay_min,p50_delay_min,p95_delay_min,pct_over_15_min
+Carrier C,14518,7.06,1.1,5.68,2.58
+Carrier D,7128,5.73,3.56,16.7,6.13
+Carrier B,22327,1.76,0.53,2.66,1.86
+Carrier A,29064,1.27,0.24,1.15,1.81

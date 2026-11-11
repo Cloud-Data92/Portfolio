@@ -1,0 +1,5 @@
+carrier_name,deliveries,on_time_pct_event_time,on_time_pct_ingest_time,on_time_but_reported_late
+Carrier C,677,80.65,76.37,29
+Carrier A,1405,83.99,83.35,9
+Carrier D,356,79.49,77.25,8
+Carrier B,1022,84.15,83.76,4

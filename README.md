@@ -18,7 +18,8 @@ Professionally that has meant building the analytics layer for a national retail
 
 | Looking for evidence of… | Start here |
 |---|---|
-| **Advanced SQL on real business problems** | [Enterprise Delivery Analytics](projects/enterprise-delivery-analytics/) — 10 case studies, each opening with the business problem |
+| **Advanced SQL on real business problems** | [Enterprise Delivery Analytics](projects/enterprise-delivery-analytics/) — 13 case studies, each opening with the business problem |
+| **Messy event data handled correctly** | [Case studies 11–13](projects/enterprise-delivery-analytics/#runnable-event-data-case-studies) — status precedence, event-vs-ingestion time, dwell time; BigQuery SQL executed against 75K synthetic webhook events, results committed |
 | **SQL you can run yourself** | [SQL Stock Market Analytics](projects/sql-stock-analytics/) — clone it, two commands, every result reproduces |
 | **Data engineering & ETL discipline** | [ETL → Star-Schema Warehouse](projects/etl-data-warehouse/) and [case study 10](projects/enterprise-delivery-analytics/sql/10_incremental_merge_architecture.sql) (incremental `MERGE`) |
 | **Real-time Python / systems engineering** | [PolyBot](projects/trading-bot/) — async engine, live order books, risk gates, dashboard |
@@ -36,7 +37,7 @@ Professionally that has meant building the analytics layer for a national retail
 
 | Project | What it shows | Status |
 |---|---|---|
-| [🚚 Enterprise Delivery Analytics](projects/enterprise-delivery-analytics/) | 10 last-mile logistics case studies in BigQuery + T-SQL — capacity utilization, geospatial serviceability, delivery-attempt modeling, KPI scoring, cross-system reconciliation, incremental load architecture, plus [cost/performance analysis](projects/enterprise-delivery-analytics/PERFORMANCE.md) | ✅ Published |
+| [🚚 Enterprise Delivery Analytics](projects/enterprise-delivery-analytics/) | 13 last-mile logistics case studies in BigQuery + T-SQL — capacity utilization, geospatial serviceability, delivery-attempt modeling, KPI scoring, cross-system reconciliation, incremental load architecture, and three [runnable event-data studies](projects/enterprise-delivery-analytics/#runnable-event-data-case-studies) (status precedence, ingestion latency, dwell time), plus [cost/performance analysis](projects/enterprise-delivery-analytics/PERFORMANCE.md) | ✅ Published |
 | [📊 SQL Stock Market Analytics](projects/sql-stock-analytics/) | Advanced SQL: schema design, joins, CTEs, window functions, portfolio P&L analysis, plus a Tableau-ready data pipeline | ✅ Complete & runnable |
 | [🏗️ ETL Pipeline → Star-Schema Warehouse](projects/etl-data-warehouse/) | Production-style ETL: messy-data cleansing, reject quarantine, data-quality gates, Kimball dimensional modeling, idempotent loads, unit tests | ✅ Complete & runnable |
 | [📈 PolyBot — Trading Engine](projects/trading-bot/) | 24/7 async Python engine for Polymarket BTC binary markets: multi-timeframe momentum signals, Kelly-criterion sizing, SQLite trade history, real-time dashboard, and an LLM advisor that can suggest but never execute | ✅ Migrated & documented |
