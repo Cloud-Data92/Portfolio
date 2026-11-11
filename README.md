@@ -4,7 +4,7 @@
 [![Deploy website](https://github.com/Cloud-Data92/Portfolio/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/Cloud-Data92/Portfolio/actions/workflows/deploy-pages.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-I build data systems that hold up in production — where the data arrives late, the sources disagree, the cost per query is real, and someone makes a decision from the output. My range spans **large-scale analytical SQL** (BigQuery, SQL Server), **data engineering** (incremental pipelines, dimensional modeling, data-quality gates), and **real-time Python systems** (async services, live market data, instrumentation).
+I build data systems that hold up in production — where the data arrives late, the sources disagree, the cost per query is real, and someone makes a decision from the output. My range spans **large-scale analytical SQL** (BigQuery, SQL Server), **KPI and performance reporting for leadership** (metric definition, plan-vs-actual, alerting, scenario modeling), **data engineering** (incremental pipelines, dimensional modeling, data-quality gates), and **real-time Python systems** (async services, live market data, instrumentation).
 
 Professionally that has meant building the analytics layer for a national retail delivery network — reporting I owned reached 200+ field and leadership users, and my capacity logic fed downstream planning systems — plus earlier analytics roles at UPS and UL Environment. Personally, a home lab of services running 24/7. Information Systems BBA (Kennesaw State University, CS minor).
 
@@ -18,7 +18,9 @@ Professionally that has meant building the analytics layer for a national retail
 
 | Looking for evidence of… | Start here |
 |---|---|
+| **KPI, OKR and headcount analytics for leadership** | [Strategy & Operations Analytics](projects/strategy-ops-analytics/) — plan vs. actual, OKR pacing, automated alerts, what-if scenarios, and a [one-page leadership readout](projects/strategy-ops-analytics/BRIEF.md) |
 | **Advanced SQL on real business problems** | [Enterprise Delivery Analytics](projects/enterprise-delivery-analytics/) — 13 case studies, each opening with the business problem |
+| **Turning analysis into a recommendation** | [BRIEF.md](projects/strategy-ops-analytics/BRIEF.md) — the findings as a leadership team would receive them, with decisions, caveats and method |
 | **Messy event data handled correctly** | [Case studies 11–13](projects/enterprise-delivery-analytics/#runnable-event-data-case-studies) — status precedence, event-vs-ingestion time, dwell time; BigQuery SQL executed against 75K synthetic webhook events, results committed |
 | **SQL you can run yourself** | [SQL Stock Market Analytics](projects/sql-stock-analytics/) — clone it, two commands, every result reproduces |
 | **Data engineering & ETL discipline** | [ETL → Star-Schema Warehouse](projects/etl-data-warehouse/) and [case study 10](projects/enterprise-delivery-analytics/sql/10_incremental_merge_architecture.sql) (incremental `MERGE`) |
@@ -27,7 +29,7 @@ Professionally that has meant building the analytics layer for a national retail
 | **A production personal AI assistant** | [MemBot — AI in iMessage](projects/imessage-assistant/) — 24/7 service, 34-tool registry, permission tiers, case-study writeup |
 | **Tableau & BI architecture** | [TABLEAU.md](projects/enterprise-delivery-analytics/TABLEAU.md) — semantic layer, LOD expressions, extract strategy, and a full [operations dashboard](projects/enterprise-delivery-analytics/assets/tableau_dashboard.png) |
 | **Visualization** | The [ops dashboard](projects/enterprise-delivery-analytics/#the-dashboard-these-queries-serve), [SQL result charts](projects/sql-stock-analytics/#visualized-results), PolyBot's live dashboard |
-| **Data quality & validation habits** | [Validation query suite](projects/enterprise-delivery-analytics/validation/data_quality_checks.sql) and the ETL project's reject quarantine |
+| **Data quality & validation habits** | [Validation query suite](projects/enterprise-delivery-analytics/validation/data_quality_checks.sql), the [data-quality scorecard](projects/strategy-ops-analytics/sql/05_data_quality_checks.sql) with stated downstream impact, and the ETL project's reject quarantine |
 | **Cost & performance engineering** | [PERFORMANCE.md](projects/enterprise-delivery-analytics/PERFORMANCE.md) — partition pruning math, spatial pre-filtering, query complexity analysis |
 | **Testing & engineering rigor** | [ETL unit tests](projects/etl-data-warehouse/test_etl.py) (18 tests), [signal robustness tests](projects/trading-bot/tests/test_signal_robustness.py), CI on every push |
 
@@ -38,6 +40,7 @@ Professionally that has meant building the analytics layer for a national retail
 | Project | What it shows | Status |
 |---|---|---|
 | [🚚 Enterprise Delivery Analytics](projects/enterprise-delivery-analytics/) | 13 last-mile logistics case studies in BigQuery + T-SQL — capacity utilization, geospatial serviceability, delivery-attempt modeling, KPI scoring, cross-system reconciliation, incremental load architecture, and three [runnable event-data studies](projects/enterprise-delivery-analytics/#runnable-event-data-case-studies) (status precedence, ingestion latency, dwell time), plus [cost/performance analysis](projects/enterprise-delivery-analytics/PERFORMANCE.md) | ✅ Published |
+| [🧭 Strategy & Operations Analytics](projects/strategy-ops-analytics/) | Five BigQuery analyses for a StratOps / Chief-of-Staff team: month-end headcount derived from an event log, plan vs. actual and attrition, OKR progress and pacing, seasonality-aware KPI alerts, what-if headcount scenarios, a data-quality scorecard, and an executive readout written from the results | ✅ Complete & runnable |
 | [📊 SQL Stock Market Analytics](projects/sql-stock-analytics/) | Advanced SQL: schema design, joins, CTEs, window functions, portfolio P&L analysis, plus a Tableau-ready data pipeline | ✅ Complete & runnable |
 | [🏗️ ETL Pipeline → Star-Schema Warehouse](projects/etl-data-warehouse/) | Production-style ETL: messy-data cleansing, reject quarantine, data-quality gates, Kimball dimensional modeling, idempotent loads, unit tests | ✅ Complete & runnable |
 | [📈 PolyBot — Trading Engine](projects/trading-bot/) | 24/7 async Python engine for Polymarket BTC binary markets: multi-timeframe momentum signals, Kelly-criterion sizing, SQLite trade history, real-time dashboard, and an LLM advisor that can suggest but never execute | ✅ Migrated & documented |

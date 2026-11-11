@@ -1,0 +1,41 @@
+kr_id,objective_id,org_id,quarter_start_date,quarter_end_date,kr_name,direction,start_value,target_value,weight
+KR001,OBJ-01-1,ORG01,2026-10-01,2026-12-31,Close open headcount requisitions,INCREASE,0,24,0.5
+KR002,OBJ-01-1,ORG01,2026-10-01,2026-12-31,Reduce average cycle time (hours),DECREASE,34,28,0.3
+KR003,OBJ-01-1,ORG01,2026-10-01,2026-12-31,Automate manual weekly reports,INCREASE,0,10,0.2
+KR004,OBJ-01-2,ORG01,2026-10-01,2026-12-31,Cut priority-1 incident count,DECREASE,40,25,0.6
+KR005,OBJ-01-2,ORG01,2026-10-01,2026-12-31,Reduce average cycle time (hours),DECREASE,34,28,0.4
+KR006,OBJ-02-1,ORG02,2026-10-01,2026-12-31,Cut priority-1 incident count,DECREASE,40,25,0.5
+KR007,OBJ-02-1,ORG02,2026-10-01,2026-12-31,Complete site readiness audits,INCREASE,0,12,0.3
+KR008,OBJ-02-1,ORG02,2026-10-01,2026-12-31,Reduce average cycle time (hours),DECREASE,34,28,0.2
+KR009,OBJ-02-2,ORG02,2026-10-01,2026-12-31,Raise on-time delivery (%),INCREASE,92,96,0.6
+KR010,OBJ-02-2,ORG02,2026-10-01,2026-12-31,Automate manual weekly reports,INCREASE,0,10,0.4
+KR011,OBJ-03-1,ORG03,2026-10-01,2026-12-31,Cut priority-1 incident count,DECREASE,40,25,0.5
+KR012,OBJ-03-1,ORG03,2026-10-01,2026-12-31,Close open headcount requisitions,INCREASE,0,24,0.3
+KR013,OBJ-03-1,ORG03,2026-10-01,2026-12-31,Reduce average cycle time (hours),DECREASE,34,28,0.2
+KR014,OBJ-03-2,ORG03,2026-10-01,2026-12-31,Reduce average cycle time (hours),DECREASE,34,28,0.6
+KR015,OBJ-03-2,ORG03,2026-10-01,2026-12-31,Complete site readiness audits,INCREASE,0,12,0.4
+KR016,OBJ-04-1,ORG04,2026-10-01,2026-12-31,Close open headcount requisitions,INCREASE,0,24,0.5
+KR017,OBJ-04-1,ORG04,2026-10-01,2026-12-31,Automate manual weekly reports,INCREASE,0,10,0.3
+KR018,OBJ-04-1,ORG04,2026-10-01,2026-12-31,Reduce average cycle time (hours),DECREASE,34,28,0.2
+KR019,OBJ-04-2,ORG04,2026-10-01,2026-12-31,Automate manual weekly reports,INCREASE,0,10,0.6
+KR020,OBJ-04-2,ORG04,2026-10-01,2026-12-31,Complete site readiness audits,INCREASE,0,12,0.4
+KR021,OBJ-05-1,ORG05,2026-10-01,2026-12-31,Raise on-time delivery (%),INCREASE,92,96,0.5
+KR022,OBJ-05-1,ORG05,2026-10-01,2026-12-31,Close open headcount requisitions,INCREASE,0,24,0.3
+KR023,OBJ-05-1,ORG05,2026-10-01,2026-12-31,Cut priority-1 incident count,DECREASE,40,25,0.2
+KR024,OBJ-05-2,ORG05,2026-10-01,2026-12-31,Automate manual weekly reports,INCREASE,0,10,0.6
+KR025,OBJ-05-2,ORG05,2026-10-01,2026-12-31,Reduce average cycle time (hours),DECREASE,34,28,0.6
+KR026,OBJ-06-1,ORG06,2026-10-01,2026-12-31,Complete site readiness audits,INCREASE,0,12,0.5
+KR027,OBJ-06-1,ORG06,2026-10-01,2026-12-31,Automate manual weekly reports,INCREASE,0,10,0.3
+KR028,OBJ-06-1,ORG06,2026-10-01,2026-12-31,Cut priority-1 incident count,DECREASE,40,25,0.2
+KR029,OBJ-06-2,ORG06,2026-10-01,2026-12-31,Reduce average cycle time (hours),DECREASE,34,28,0.6
+KR030,OBJ-06-2,ORG06,2026-10-01,2026-12-31,Cut priority-1 incident count,DECREASE,40,25,0.4
+KR031,OBJ-07-1,ORG07,2026-10-01,2026-12-31,Raise on-time delivery (%),INCREASE,92,96,0.5
+KR032,OBJ-07-1,ORG07,2026-10-01,2026-12-31,Automate manual weekly reports,INCREASE,0,10,0.3
+KR033,OBJ-07-1,ORG07,2026-10-01,2026-12-31,Complete site readiness audits,INCREASE,0,12,0.2
+KR034,OBJ-07-2,ORG07,2026-10-01,2026-12-31,Reduce average cycle time (hours),DECREASE,34,28,0.6
+KR035,OBJ-07-2,ORG07,2026-10-01,2026-12-31,Complete site readiness audits,INCREASE,0,12,0.4
+KR036,OBJ-08-1,ORG08,2026-10-01,2026-12-31,Close open headcount requisitions,INCREASE,0,24,0.5
+KR037,OBJ-08-1,ORG08,2026-10-01,2026-12-31,Reduce average cycle time (hours),DECREASE,34,28,0.3
+KR038,OBJ-08-1,ORG08,2026-10-01,2026-12-31,Raise on-time delivery (%),INCREASE,92,96,0.2
+KR039,OBJ-08-2,ORG08,2026-10-01,2026-12-31,Automate manual weekly reports,INCREASE,0,10,0.6
+KR040,OBJ-08-2,ORG08,2026-10-01,2026-12-31,Cut priority-1 incident count,DECREASE,40,25,0.4

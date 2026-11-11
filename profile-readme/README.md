@@ -5,6 +5,7 @@
 ## 🔭 Highlights
 
 - 🚚 **[Enterprise Delivery Analytics](https://github.com/Cloud-Data92/Portfolio/tree/main/projects/enterprise-delivery-analytics)** — 13 last-mile logistics case studies: BigQuery GIS serviceability, capacity utilization, KPI scoring, reconciliation, webhook status precedence and ingestion latency, incremental `MERGE` architecture, plus a Tableau semantic layer and query cost analysis
+- 🧭 **[Strategy & Operations Analytics](https://github.com/Cloud-Data92/Portfolio/tree/main/projects/strategy-ops-analytics)** — headcount plan vs. actual from an event log, OKR pacing, seasonality-aware KPI alerts, what-if scenarios, and a one-page leadership readout; BigQuery SQL with committed, independently checked results
 - 📈 **[PolyBot](https://github.com/Cloud-Data92/Portfolio/tree/main/projects/trading-bot)** — 24/7 async trading engine with live order books, Kelly sizing, SQLite analytics, a real-time dashboard, and an advisory-only LLM sidecar
 - 📊 **[SQL Stock Market Analytics](https://github.com/Cloud-Data92/Portfolio/tree/main/projects/sql-stock-analytics)** — runnable window-function/CTE showcase with Tableau-ready outputs
 - 🤖 **[Local-AI Discord bots](https://github.com/Cloud-Data92/Portfolio/tree/main/projects/discord-bots)** — self-hosted Ollama-backed chatbot and stock scanner
